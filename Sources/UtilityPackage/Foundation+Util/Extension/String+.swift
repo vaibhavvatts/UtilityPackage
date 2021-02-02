@@ -23,6 +23,12 @@ public extension String {
     func toDate(formatter: String) -> Date{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatter
-        return dateFormatter.date(from: self)!
+        
+        #if DEBUG
+        return  dateFormatter.date(from: self)!
+        #else
+        return  dateFormatter.date(from: self) ?? Date()
+        #endif
+        
     }
 }

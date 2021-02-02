@@ -9,20 +9,31 @@ final class ArrayTestCase: XCTestCase {
     var arrToBeEnumerated: Array<Any>?
     
     override func setUpWithError() throws {
-      arrToBeEnumerated = Array(stride(from: 5, to: 15, by: 1))
+        
+        let user = UserModel(name: "Epiphany Labs", age: 2, income: 9999.9)
+        
+        arrToBeEnumerated = [1, 0.2, 0.20057, "Ephiphany Labs", user]
     }
    
-    // Checking for nil values while enumerating.
-    /// Passing input array of integers.
+    // Checking for nil values and condition that satisfy certain expectation.
+    /// Passing generic array of type Any.
     
     func test_Enumerate() {
         arrToBeEnumerated?.enumerate({ (value, index, condition) in
+            if let requiredValue = value as? Double{
+                print(index)
+                XCTAssertNotNil(condition = requiredValue == 0.20057 ?  true : false)
+            }
           XCTAssertNotNil(value)
         })
     }
     
     func test_RevereseEnumerate(){
         arrToBeEnumerated?.reverseEnumerate { (value, index, condition) in
+            if let requiredValue = value as? Double{
+                print(index)
+                XCTAssertNotNil(condition = requiredValue == 0.20057 ?  true : false)
+            }
             XCTAssertNotNil(value)
         }
     }
@@ -34,5 +45,5 @@ final class ArrayTestCase: XCTestCase {
     func test_IsNotEmpty(){
         XCTAssert(((arrToBeEnumerated?.isNotEmpty()) != nil))
     }
-
 }
+
