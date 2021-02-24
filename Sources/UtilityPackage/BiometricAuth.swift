@@ -85,6 +85,8 @@ open class BiometricIDAuth {
             return .touchID
         case .faceID:
             return .faceID
+        @unknown default:
+            fatalError()
         }
     }
     
