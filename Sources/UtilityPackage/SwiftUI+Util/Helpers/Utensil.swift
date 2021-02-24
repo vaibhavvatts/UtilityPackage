@@ -3,6 +3,11 @@
 import Foundation
 import SwiftUI
 
+
+//   Enumeration for Views in SwiftUI. Used for creating views from ForEach.
+/// - Parameters : array of generic type.
+/// Passing input  as an array of models
+
 struct EnumeratedForEach<T, ContentView: View>: View {
     let data: [T]
     let content: (Int, T) -> ContentView
