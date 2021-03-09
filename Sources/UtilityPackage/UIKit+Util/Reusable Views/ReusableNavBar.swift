@@ -40,8 +40,8 @@ class ReusableNavBar: UIView {
         navigationBar.fillSuperview()
         
         navigationBar.barTintColor = .white
-        navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Theme.boldLabelFont!,
-                                             NSAttributedString.Key.foregroundColor: Theme.regularLabelColor!]
+       // navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Theme.boldLabelFont!,
+                                             //NSAttributedString.Key.foregroundColor: Theme.regularLabelColor!]
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationBar.shadowImage = UIImage()
         
@@ -56,8 +56,8 @@ class ReusableNavBar: UIView {
         
         if let rightItem1 = rightBarItems?.first, let rightItem2 = rightBarItems?.last {
             navItem.rightBarButtonItems = [rightItem1, rightItem2]
-            navItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: Theme.mediumLabelFont!,
-                                                                NSAttributedString.Key.foregroundColor: Theme.regularLabelColor!], for: .normal)
+           // navItem.rightBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.font: Theme.mediumLabelFont!,
+                                                                //NSAttributedString.Key.foregroundColor: Theme.regularLabelColor!], for: .normal)
         }
         
         if let backButton = backButton {
@@ -86,8 +86,8 @@ class ReusableNavBar: UIView {
         if let title = title {
             backbutton.setTitle(title, for: .normal)
         }
-        backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
-        backbutton.titleLabel?.font = Theme.mediumLabelFont
+       // backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
+       // backbutton.titleLabel?.font = Theme.mediumLabelFont
         backbutton.addTarget(self, action: #selector(leftButtonAction), for: .touchUpInside)
         return UIBarButtonItem(customView: backbutton)
     }
@@ -101,8 +101,8 @@ class ReusableNavBar: UIView {
         if let title = title {
             backbutton.setTitle(title, for: .normal)
         }
-        backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
-        backbutton.titleLabel?.font = Theme.mediumLabelFont
+       // backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
+      //  backbutton.titleLabel?.font = Theme.mediumLabelFont
         backbutton.addTarget(self, action: #selector(firstRightButtonAction), for: .touchUpInside)
         return UIBarButtonItem(customView: backbutton)
     }
@@ -116,8 +116,8 @@ class ReusableNavBar: UIView {
         if let title = title {
             backbutton.setTitle(title, for: .normal)
         }
-        backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
-        backbutton.titleLabel?.font = Theme.mediumLabelFont
+      //  backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
+      //  backbutton.titleLabel?.font = Theme.mediumLabelFont
         backbutton.addTarget(self, action: #selector(secondRightButtonAction), for: .touchUpInside)
         return UIBarButtonItem(customView: backbutton)
     }
@@ -131,8 +131,8 @@ class ReusableNavBar: UIView {
         if let title = title {
             backbutton.setTitle(title, for: .normal)
         }
-        backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
-        backbutton.titleLabel?.font = Theme.mediumLabelFont
+      //  backbutton.setTitleColor(Theme.regularLabelColor, for: .normal)
+      //  backbutton.titleLabel?.font = Theme.mediumLabelFont
         backbutton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
         return UIBarButtonItem(customView: backbutton)
     }
