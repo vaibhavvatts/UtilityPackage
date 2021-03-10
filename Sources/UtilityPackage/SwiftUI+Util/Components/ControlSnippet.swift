@@ -24,7 +24,7 @@ public struct ControlSnippetTitle: View {
             Text(title)
             Spacer()
         }
-        .font(.system(size: 18, weight: .semibold, design: .rounded))
+        .font(.system(size: 17, weight: .semibold, design: .rounded))
         .foregroundColor(Color.white)
     }
 }
