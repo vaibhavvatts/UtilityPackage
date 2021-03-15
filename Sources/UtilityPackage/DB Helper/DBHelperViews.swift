@@ -19,12 +19,15 @@ public struct DynamicFetchView<T: NSManagedObject, Content: View>: View {
     }
 
     public init(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor], @ViewBuilder content: @escaping (FetchedResults<T>) -> Content) {
-        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: predicate, animation: .easeOut(duration: 1))
+        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: predicate, animation: .easeInOut(duration: 0.4))
         self.content = content
     }
 
-    public init(fetchRequest: NSFetchRequest<T>, @ViewBuilder content: @escaping (FetchedResults<T>) -> Content) {
-        self.fetchRequest = FetchRequest<T>(fetchRequest: fetchRequest)
+    public init(fetchRequest: NSFetchRequest<T>, sortDescriptors: [NSSortDescriptor], predicate: NSPredicate?, fetchLimit: Int, @ViewBuilder content: @escaping (FetchedResults<T>) -> Content) {
+        fetchRequest.fetchLimit = fetchLimit
+        fetchRequest.sortDescriptors = sortDescriptors
+        fetchRequest.predicate = predicate
+        self.fetchRequest = FetchRequest<T>(fetchRequest: fetchRequest, animation: .easeInOut(duration: 0.3))
         self.content = content
     }
 }

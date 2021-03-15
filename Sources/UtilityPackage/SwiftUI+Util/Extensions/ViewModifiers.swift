@@ -9,7 +9,6 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 13, *)
 public extension Binding {
     func onChange(_ handler: @escaping () -> Void) -> Binding<Value> {
         return Binding(
@@ -18,5 +17,24 @@ public extension Binding {
                 self.wrappedValue = selection
                 handler()
         })
+    }
+}
+
+public struct NavBtnModifier: ViewModifier {
+    public func body(content: Content) -> some View {
+        content
+            .font(.system(size: 19, weight: .semibold, design: .rounded))
+            .foregroundColor(ColorNames.theme)
+    }
+}
+
+public struct SnippetStyleModifier: ViewModifier {
+    public init() {}
+    
+    public func body(content: Content) -> some View {
+        content
+            .background(ColorNames.unSelectedBg.opacity(0.2))
+            .cornerRadius(7)
+            .shadow(color: Color.white.opacity(0.2), radius: 1)
     }
 }

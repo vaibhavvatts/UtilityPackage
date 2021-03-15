@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 13, *)
 open class HapticEngine {
     class public func generate(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
         let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: style)
@@ -22,5 +21,9 @@ open class HapticEngine {
     
     class public func generateSoftHaptic() {
         HapticEngine.generate(.soft)
+    }
+    
+    class public func generateHeavyHaptic() {
+        HapticEngine.generate(.heavy)
     }
 }
