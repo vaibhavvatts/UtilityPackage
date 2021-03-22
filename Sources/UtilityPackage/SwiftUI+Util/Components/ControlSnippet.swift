@@ -78,11 +78,13 @@ public struct DotView: View {
 @available(iOS 13, *)
 public struct IconTextLayoutSV: View {
     public var iconName: String
-    public var text: String
+    public var text: String = ""
+    public var isSelected = false
     
-    public init(iconName: String, text: String) {
+    public init(iconName: String, text: String = "", isSelected: Bool = false) {
         self.iconName = iconName
         self.text = text
+        self.isSelected = isSelected
     }
     
     public var body: some View {
@@ -91,5 +93,6 @@ public struct IconTextLayoutSV: View {
             Text(text)
         }
         .font(.system(size: 18, weight: .semibold, design: .rounded))
+        .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.6))
     }
 }

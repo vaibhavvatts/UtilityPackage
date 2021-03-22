@@ -13,6 +13,24 @@ import CoreText
 
 @available(iOS 13, *)
 open class UtilityUIKit {
+    public static var rootViewController: UIViewController? {
+        for scene in UIApplication.shared.connectedScenes {
+            if scene.activationState == .foregroundActive,
+               let rootVc = (((scene as? UIWindowScene)?.delegate as? UIWindowSceneDelegate)?.window as? UIWindow)?.rootViewController {
+                return rootVc
+            }
+        }
+        return nil
+    }
+    
+    public static func present(viewController: UIViewController) {
+        if let rootVc = rootViewController {
+            let navController = UINavigationController(rootViewController: viewController)
+            navController.modalPresentationStyle = .overFullScreen
+            rootVc.present(navController, animated: true, completion: nil)
+        }
+    }
+    
     public static var topViewController: UIViewController? {
         guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else { return nil }
         //        guard let rootController = UIApplication.shared.keyWindow?.rootViewController else { return nil }

@@ -28,9 +28,10 @@ public enum ColorNames {
     public static let keyMustered = Color("keyMustered")
     public static let keyOrange = Color("keyOrange")
     public static let keyRed = Color("keyRed")
+    public static let destructive = Color("destructive")
     public static let keySkyBlue = Color("keySkyBlue")
     public static let keyWhite = Color("keyWhite")
-    public static let keyYellow = Color("keyYellow")
+    public static let warningColor = Color("warningColor")
     public static let keyMaroon = Color("keyMaroon")
 }
 
