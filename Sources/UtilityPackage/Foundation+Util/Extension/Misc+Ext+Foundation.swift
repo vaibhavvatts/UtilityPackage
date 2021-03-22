@@ -9,7 +9,7 @@
 import Foundation
 
 
-extension Collection {
+public extension Collection {
     func isNotEmpty() -> Bool {
         return !self.isEmpty
     }

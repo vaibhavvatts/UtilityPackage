@@ -10,7 +10,8 @@ import Foundation
 
 
 extension Array {
-    func enumerate(_ closure: (Element, Int, inout Bool) -> ()) {
+    
+   public func enumerate(_ closure: (Element, Int, inout Bool) -> ()) {
         var stop = false
         for (index, value) in self.enumerated() {
             if stop { break }
@@ -18,7 +19,7 @@ extension Array {
         }
     }
     
-    func reverseEnumerate(_ closure: (Element, Int, inout Bool) -> ()) {
+   public func reverseEnumerate(_ closure: (Element, Int, inout Bool) -> ()) {
         var stop = false
         for (index, value) in self.enumerated().reversed() {
             if stop { break }

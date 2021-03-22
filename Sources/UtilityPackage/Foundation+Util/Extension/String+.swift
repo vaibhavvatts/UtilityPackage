@@ -19,4 +19,16 @@ public extension String {
         let Date12 = dateFormatter.string(from: date!)
         return Date12
     }
+    
+    func toDate(formatter: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = formatter
+        
+        #if DEBUG
+        return  dateFormatter.date(from: self)!
+        #else
+        return  dateFormatter.date(from: self) ?? Date()
+        #endif
+        
+    }
 }
