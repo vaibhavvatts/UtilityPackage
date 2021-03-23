@@ -12,7 +12,7 @@ public struct EnumeratedForEach<T, ContentView: View>: View {
     let data: [T]
     let content: (Int, T) -> ContentView
     
-    init(_ data: [T], @ViewBuilder content: @escaping (Int, T) -> ContentView) {
+    public init(_ data: [T], @ViewBuilder content: @escaping (Int, T) -> ContentView) {
         self.data = data
         self.content = content
     }
