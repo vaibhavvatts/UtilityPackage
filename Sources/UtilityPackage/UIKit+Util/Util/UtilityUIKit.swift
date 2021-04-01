@@ -23,17 +23,17 @@ open class UtilityUIKit {
         return nil
     }
     
-    public static func present(viewController: UIViewController) {
+    public static func present(viewController: UIViewController, presentationStyle: UIModalPresentationStyle = .overFullScreen, navBarHidden: Bool = false) {
         if let rootVc = rootViewController {
             let navController = UINavigationController(rootViewController: viewController)
-            navController.modalPresentationStyle = .overFullScreen
+            navController.modalPresentationStyle = presentationStyle
+            navController.navigationBar.isHidden = navBarHidden
             rootVc.present(navController, animated: true, completion: nil)
         }
     }
     
     public static var topViewController: UIViewController? {
         guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else { return nil }
-        //        guard let rootController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
         
         if let rootVC = rootController as? UINavigationController {
             return rootVC.visibleViewController
