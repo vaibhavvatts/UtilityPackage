@@ -23,6 +23,13 @@ open class UtilityUIKit {
         return nil
     }
     
+  
+    public static func pushOnTopNav(to viewController: UIViewController) {
+        if let topVc = topViewController {
+            topVc.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
     public static func present(viewController: UIViewController, presentationStyle: UIModalPresentationStyle = .overFullScreen, navBarHidden: Bool = false) {
         if let rootVc = rootViewController {
             let navController = UINavigationController(rootViewController: viewController)

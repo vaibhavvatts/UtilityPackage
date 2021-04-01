@@ -19,27 +19,39 @@ public struct TitleSubtitleRow: View {
     }
     
     public var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
+        HStack {
+            VStack {
                 if let titleIcon = titleIcon {
                     Image(systemName: titleIcon)
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
-                }
-                if let title = title {
-                    Text(title)
-                        .font(.system(size: 20, weight: .semibold, design: .rounded))
                         .foregroundColor(ColorNames.keyWhite)
+                        .padding(.top, 4)
+                    
+                    Spacer()
                 }
             }
-            .font(.system(size: 20, weight: .semibold, design: .rounded))
-            if let subtitle = subtitle {
-                Text(subtitle)
-                    .font(.system(size: 14, weight: .medium, design: .rounded))
-                    .foregroundColor(ColorNames.title)
+            VStack {
+                HStack {
+                    if let title = title {
+                        Text(title)
+                            .font(.system(size: 20, weight: .semibold, design: .rounded))
+                            .foregroundColor(ColorNames.keyWhite)
+                        
+                        Spacer()
+                    }
+                }
+                HStack {
+                    if let subtitle = subtitle {
+                        Text(subtitle)
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
+                            .foregroundColor(ColorNames.keyGray)
+                        
+                        Spacer()
+                    }
+                    
+                }
             }
         }
-        .padding(.top)
-        
     }
 }
 

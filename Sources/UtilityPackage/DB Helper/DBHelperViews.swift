@@ -19,7 +19,7 @@ public struct DynamicFetchView<T: NSManagedObject, Content: View>: View {
     }
 
     public init(predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor], @ViewBuilder content: @escaping (FetchedResults<T>) -> Content) {
-        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: predicate, animation: .easeInOut(duration: 0.4))
+        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: sortDescriptors, predicate: predicate, animation: .easeInOut(duration: 0.2))
         self.content = content
     }
 
@@ -27,7 +27,7 @@ public struct DynamicFetchView<T: NSManagedObject, Content: View>: View {
         fetchRequest.fetchLimit = fetchLimit
         fetchRequest.sortDescriptors = sortDescriptors
         fetchRequest.predicate = predicate
-        self.fetchRequest = FetchRequest<T>(fetchRequest: fetchRequest, animation: .easeInOut(duration: 0.3))
+        self.fetchRequest = FetchRequest<T>(fetchRequest: fetchRequest, animation: .easeInOut(duration: 0.2))
         self.content = content
     }
 }
