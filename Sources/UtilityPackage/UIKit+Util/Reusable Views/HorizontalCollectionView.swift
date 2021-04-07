@@ -14,7 +14,7 @@ open class HorizontalCollectionView: UIView {
     
     var collectionView:UICollectionView!
     public var reuseIdentifier: String = "ImageCollectionViewCellID" // any dummy id. overriding later on.
-    
+    public var reuseIdentifier2: String = ""
     public var delegate: AnyObject? {
         willSet {
             collectionView.delegate = newValue as? UICollectionViewDelegate
@@ -56,6 +56,12 @@ open class HorizontalCollectionView: UIView {
         let nibName = UINib(nibName: name, bundle:nil)
         reuseIdentifier = name + "ID"
         collectionView.register(nibName, forCellWithReuseIdentifier: reuseIdentifier)
+    }
+    
+    public func registerNib2(with name: String) {
+        let nibName = UINib(nibName: name, bundle:nil)
+        reuseIdentifier2 = name + "ID"
+        collectionView.register(nibName, forCellWithReuseIdentifier: reuseIdentifier2)
     }
     
     public func reloadData() { collectionView.reloadData() }
