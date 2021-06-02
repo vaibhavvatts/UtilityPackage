@@ -21,6 +21,7 @@ public extension Binding {
 }
 
 public struct NavBtnModifier: ViewModifier {
+    public init() {}
     public func body(content: Content) -> some View {
         content
             .font(.system(size: 19, weight: .semibold, design: .rounded))

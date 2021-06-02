@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+#if !os(watchOS)
 public extension UIView {
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
@@ -123,3 +124,4 @@ public extension UIView {
 public struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
+#endif

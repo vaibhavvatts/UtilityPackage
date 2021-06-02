@@ -13,6 +13,7 @@ public extension CGPoint {
     static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint { CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y) }
 }
 
+#if !os(watchOS)
 public extension UITextView {
     /// Veritcally centers the text inside text view.
     func centerVertically() {
@@ -38,4 +39,4 @@ public extension NSMutableAttributedString {
     }
 }
 
-
+#endif

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@available(iOS 13, *)
+#if !os(watchOS)
 open class SwiftUIUtility {
     public class func openSettings() {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
@@ -22,3 +22,4 @@ open class SwiftUIUtility {
         }
     }
 }
+#endif

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+#if !os(watchOS)
 public protocol ReusableNavBarProtocol: AnyObject {
     
     func didTapLeftButton()
@@ -154,3 +155,4 @@ class ReusableNavBar: UIView {
         delegate?.didTapBackButton()
     }
 }
+#endif

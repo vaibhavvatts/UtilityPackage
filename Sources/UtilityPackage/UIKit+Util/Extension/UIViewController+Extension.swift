@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+#if !os(watchOS)
 public extension UIViewController {
     
      func showActionSheet(title: String?, message: String?, arrActionCategory: [ActionCategory]) -> UIAlertController {
@@ -35,3 +36,4 @@ public extension UIViewController {
     
     func hideNavigationBar() { navigationController?.navigationBar.isHidden = true }
 }
+#endif

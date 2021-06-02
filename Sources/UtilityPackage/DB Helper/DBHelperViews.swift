@@ -9,7 +9,7 @@
 import SwiftUI
 import CoreData
 
-@available(iOS 13, *)
+@available(watchOS 6, *)
 public struct DynamicFetchView<T: NSManagedObject, Content: View>: View {
     let fetchRequest: FetchRequest<T>
     let content: (FetchedResults<T>) -> Content

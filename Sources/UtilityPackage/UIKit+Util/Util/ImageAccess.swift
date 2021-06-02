@@ -9,13 +9,12 @@
 import Foundation
 import UIKit
 
-@available(iOS 13, *)
+#if !os(watchOS)
 public protocol ImageAccessDelegate {
     func didSelectImage(image: UIImage?)
     func didNotSelectImage()
 }
 
-@available(iOS 13, *)
 public class ImageAccess: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     public var delegate: ImageAccessDelegate?
     public var delegateViewController: UIViewController?
@@ -71,3 +70,4 @@ public class ImageAccess: NSObject, UIImagePickerControllerDelegate, UINavigatio
         UtilityUIKit.topViewController?.dismiss(animated: true, completion:nil)
     }
 }
+#endif

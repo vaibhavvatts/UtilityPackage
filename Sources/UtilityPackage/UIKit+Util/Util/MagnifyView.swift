@@ -7,6 +7,7 @@
 
 import UIKit
 
+#if !os(watchOS)
 public class MagnifyView: UIView {
 
     var viewToMagnify: UIView!
@@ -47,3 +48,4 @@ public class MagnifyView: UIView {
     }
 
 }
+#endif

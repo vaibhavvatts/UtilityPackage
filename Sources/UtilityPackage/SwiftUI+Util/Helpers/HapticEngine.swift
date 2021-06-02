@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if !os(watchOS)
 open class HapticEngine {
     class public func generate(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
         let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: style)
@@ -27,3 +28,4 @@ open class HapticEngine {
         HapticEngine.generate(.heavy)
     }
 }
+#endif

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+#if !os(watchOS)
 open class ActionCategory {
     let title: String
     let handler: ()->()
@@ -29,3 +30,4 @@ open class ActionCategory {
         self.shouldEnable = shouldEnable
     }
 }
+#endif

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+#if !os(watchOS)
 public extension UILabel {
     
     /// To apply gradient on UILabel text
@@ -37,3 +38,4 @@ public extension UILabel {
         textColor =  UIColor(patternImage: image)
     }
 }
+#endif

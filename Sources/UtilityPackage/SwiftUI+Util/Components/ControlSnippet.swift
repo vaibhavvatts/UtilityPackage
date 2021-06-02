@@ -64,9 +64,11 @@ public struct SettingSnippetResultantText: View {
     }
 }
 
-@available(iOS 13, *)
 public struct DotView: View {
-    public var colorName: Color
+    public init(colorName: Color) {
+        self.colorName = colorName
+    }
+    private var colorName: Color
     
     public var body: some View {
         Text(Constants.dotMark)
@@ -94,5 +96,19 @@ public struct IconTextLayoutSV: View {
         }
         .font(.system(size: 18, weight: .semibold, design: .rounded))
         .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.6))
+    }
+}
+
+struct SettingSnippetInfoText: View {
+    var text: String
+    
+    var body: some View {
+        HStack {
+            Text(text)
+                .fixedSize(horizontal: false, vertical: true)
+                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .foregroundColor(ColorNames.unSelected)
+            Spacer()
+        }
     }
 }

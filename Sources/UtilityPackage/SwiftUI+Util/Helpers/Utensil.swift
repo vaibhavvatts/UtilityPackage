@@ -8,6 +8,7 @@ import SwiftUI
 /// - Parameters : array of generic type.
 /// Passing input  as an array of models
 
+@available(watchOS 6, *)
 public struct EnumeratedForEach<T, ContentView: View>: View {
     let data: [T]
     let content: (Int, T) -> ContentView

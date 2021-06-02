@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(watchOS 6, *)
 public struct NavBarBtn: View {
     public var title: String?
     public var imgName: String?

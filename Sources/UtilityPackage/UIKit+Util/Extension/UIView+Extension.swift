@@ -7,6 +7,7 @@
 //
 import UIKit
 
+#if !os(watchOS)
 public extension UIView {
     
     /// Load nib/xib for any UIView.
@@ -64,3 +65,4 @@ public extension UIView {
         return CGRect(x: self.X, y: self.Y, width: self.width, height: self.height + 5)
     }
 }
+#endif

@@ -11,7 +11,7 @@ import UIKit
 import CoreGraphics
 import CoreText
 
-@available(iOS 13, *)
+#if !os(watchOS)
 open class UtilityUIKit {
     public static var rootViewController: UIViewController? {
         for scene in UIApplication.shared.connectedScenes {
@@ -130,3 +130,4 @@ open class UtilityUIKit {
     }
 }
 
+#endif

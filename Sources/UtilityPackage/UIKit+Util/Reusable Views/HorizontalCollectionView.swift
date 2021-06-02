@@ -8,6 +8,7 @@
 
 import UIKit
 
+#if !os(watchOS)
 public protocol HorizontalCollectionViewPortocol: AnyObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {}
 
 open class HorizontalCollectionView: UIView {
@@ -66,3 +67,4 @@ open class HorizontalCollectionView: UIView {
     
     public func reloadData() { collectionView.reloadData() }
 }
+#endif

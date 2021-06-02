@@ -10,10 +10,11 @@ import SwiftUI
 import UIKit
 
 #if canImport(UIKit)
-@available(iOS 13, *)
+#if !os(watchOS)
 public extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
+#endif
 #endif

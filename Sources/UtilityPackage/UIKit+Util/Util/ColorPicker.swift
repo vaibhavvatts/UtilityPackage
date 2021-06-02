@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+#if !os(watchOS)
 internal protocol VVColorPickerDelegate : NSObjectProtocol {
     func colorPickerTouched(sender:VVColorPicker, color:UIColor, point:CGPoint)
 }
@@ -105,3 +106,4 @@ class VVColorPicker : UIView {
     }
 }
 
+#endif

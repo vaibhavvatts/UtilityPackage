@@ -8,8 +8,10 @@
 
 import UIKit
 
+#if !os(watchOS)
 public extension UIStoryboard {
     static var mainStoryboard: UIStoryboard {
         UIStoryboard(name: "Main", bundle: nil)
     }
 }
+#endif
