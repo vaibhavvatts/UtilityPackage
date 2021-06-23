@@ -65,4 +65,28 @@ public extension UIView {
         return CGRect(x: self.X, y: self.Y, width: self.width, height: self.height + 5)
     }
 }
+
+public extension UIView {
+    
+    func addContraintWithFormat(format: String, views: UIView...) {
+        
+        var viewsDict = [String: UIView]()
+        for (index, view) in views.enumerated() {
+            let key = "v\(index)"
+            viewsDict[key] = view
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDict))
+    }
+    
+    func screenshot() -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, false, 0)
+        defer { UIGraphicsEndImageContext() }
+        drawHierarchy(in: bounds, afterScreenUpdates: true)
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+    
+}
+
 #endif
