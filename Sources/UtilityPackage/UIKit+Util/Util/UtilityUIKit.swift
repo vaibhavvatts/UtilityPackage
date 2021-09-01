@@ -81,7 +81,7 @@ open class UtilityUIKit {
         return attrString
     }
     
-    public class func addAlertController(onViewController controller:UIViewController,messageString message:String, title: String?, firstTitle: String, okHandler ok:(()->Void)?,cancelHandler cancel:(()->Void)?) {
+    public class func addAlertController(onViewController controller:UIViewController,messageString message:String, title: String?, firstTitle: String, tintColor: UIColor? = .red, okHandler ok:(()->Void)?,cancelHandler cancel:(()->Void)?) {
         weak var cont = controller
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let okHandler = ok {
@@ -94,7 +94,7 @@ open class UtilityUIKit {
                 cancelHandler()
             }))
         }
-        alertController.view.tintColor = UIColor.red
+        alertController.view.tintColor = tintColor
         cont?.present(alertController, animated: true, completion: nil)
     }
     
