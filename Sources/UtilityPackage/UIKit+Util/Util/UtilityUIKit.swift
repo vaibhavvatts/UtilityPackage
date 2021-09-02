@@ -90,7 +90,7 @@ open class UtilityUIKit {
             }))
         }
         if let cancelHandler = cancel {
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
                 cancelHandler()
             }))
         }
