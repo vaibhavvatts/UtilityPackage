@@ -33,3 +33,11 @@ public extension View {
         }
     }
 }
+
+
+public enum DeviceType  {
+    case iPad
+    case iPhone
+}
+
+public let deviceType : DeviceType = UIDevice.current.userInterfaceIdiom == .pad ? .iPad : .iPhone

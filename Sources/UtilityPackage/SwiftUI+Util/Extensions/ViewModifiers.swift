@@ -37,5 +37,9 @@ public struct SnippetStyleModifier: ViewModifier {
             .background(ColorNames.unSelectedBg.opacity(0.2))
             .cornerRadius(7)
             .shadow(color: Color.white.opacity(0.2), radius: 1)
+//            .overlay(
+//                    RoundedRectangle(cornerRadius: 7)
+//                        .stroke(ColorNames.theme.opacity(0.1), lineWidth: 1)
+//                )
     }
 }
