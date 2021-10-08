@@ -23,7 +23,9 @@ public extension Date {
     }
     
     var getDateAndTime: String {
-        self.toString(dateFormat: "MMM d, h:mm a")
+        if Calendar.current.isDateInToday(self) { return "Today " + self.toString(dateFormat: "h:mm a") }
+        else if Calendar.current.isDateInTomorrow(self) { return "Tomorrow " + self.toString(dateFormat: "h:mm a") }
+        return self.toString(dateFormat: "MMM d, h:mm a")
     }
     
     var getDate: String {
