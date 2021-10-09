@@ -71,7 +71,7 @@ public struct DotView: View {
     private var colorName: Color
     
     public var body: some View {
-        Text(Constants.dotMark)
+        Text(UtilConstants.dotMark)
             .font(.system(size: 18, weight: .bold, design: .rounded))
             .foregroundColor(colorName)
     }
@@ -99,10 +99,10 @@ public struct IconTextLayoutSV: View {
     }
 }
 
-struct SettingSnippetInfoText: View {
-    var text: String
+public struct SettingSnippetInfoText: View {
+    public var text: String
     
-    var body: some View {
+    public var body: some View {
         HStack {
             Text(text)
                 .fixedSize(horizontal: false, vertical: true)
@@ -110,5 +110,27 @@ struct SettingSnippetInfoText: View {
                 .foregroundColor(ColorNames.unSelected)
             Spacer()
         }
+    }
+}
+
+public struct TileBottomButtonStyle: View {
+    public var iconName: String
+    public var text: String = ""
+    public var isSelected = false
+    
+    public init(iconName: String, text: String = "", isSelected: Bool = false) {
+        self.iconName = iconName
+        self.text = text
+        self.isSelected = isSelected
+    }
+    
+    public var body: some View {
+        HStack {
+            Image(systemName: iconName)
+            Text(text)
+                .padding(.leading, -4)
+        }
+        .font(.system(size: 16, weight: .medium, design: .rounded))
+        .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.7))
     }
 }

@@ -24,6 +24,7 @@ public struct TitleSubtitleRow: View {
                 if let titleIcon = titleIcon {
                     Image(systemName: titleIcon)
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        .frame(width: 30, alignment: .center)
                         .foregroundColor(ColorNames.keyWhite)
                         .padding(.top, 4)
                     
@@ -34,7 +35,7 @@ public struct TitleSubtitleRow: View {
                 HStack {
                     if let title = title {
                         Text(title)
-                            .font(.system(size: 20, weight: .semibold, design: .rounded))
+                            .font(.system(size: 20, weight: .medium, design: .rounded))
                             .foregroundColor(ColorNames.keyWhite)
                         
                         Spacer()
