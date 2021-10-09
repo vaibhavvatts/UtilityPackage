@@ -71,7 +71,7 @@ public struct DotView: View {
     private var colorName: Color
     
     public var body: some View {
-        Text(Constants.dotMark)
+        Text(UtilConstants.dotMark)
             .font(.system(size: 18, weight: .bold, design: .rounded))
             .foregroundColor(colorName)
     }
