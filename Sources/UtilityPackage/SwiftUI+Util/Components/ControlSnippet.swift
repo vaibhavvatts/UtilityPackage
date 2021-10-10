@@ -112,3 +112,25 @@ struct SettingSnippetInfoText: View {
         }
     }
 }
+
+public struct TileBottomButtonStyle: View {
+    public var iconName: String
+    public var text: String = ""
+    public var isSelected = false
+    
+    public init(iconName: String, text: String = "", isSelected: Bool = false) {
+        self.iconName = iconName
+        self.text = text
+        self.isSelected = isSelected
+    }
+    
+    public var body: some View {
+        HStack {
+            Image(systemName: iconName)
+            Text(text)
+                .padding(.leading, -4)
+        }
+        .font(.system(size: 16, weight: .medium, design: .rounded))
+        .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.7))
+    }
+}
