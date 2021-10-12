@@ -32,6 +32,8 @@ public enum UtilConstants {
     public static let skip = "Skip"
     public static let gotIt = "Got it!"
     public static let reminder = "Reminder"
+    public static let dueDate = "Due Date"
+    public static let startDate = "Start Date"
     public static let favourite = "Important"
     public static let wallpaper = "Wallpaper"
     public static let ticker = "Ticker"
@@ -54,4 +56,6 @@ public enum UtilConstants {
     public static let goToSettings = "Go to Settings"
     public static let notificationFailureMessage = "To receive reminders, you must allow notifications from Settings."
     public static let trash = "Trash"
+    public static let today = "Today"
+    public static let tomorrow = "Tomorrow"
 }

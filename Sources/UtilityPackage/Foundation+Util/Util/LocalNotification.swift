@@ -34,8 +34,13 @@ public struct PayloadLocalNotification {
 
 public class LocalNotifications {
     public static func requestAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if !success {
+        UNUserNotificationCenter.current().getNotificationSettings { status in
+            if status.authorizationStatus == .notDetermined {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    
+                }
+            }
+            else if status.authorizationStatus != .authorized {
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: UtilConstants.important, message: UtilConstants.notificationFailureMessage, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: UtilConstants.goToSettings, style: UIAlertAction.Style.default, handler: { _ in
