@@ -52,6 +52,19 @@ open class UtilityUIKit {
         return nil
     }
     
+    public static var topVC: UIViewController? {
+        guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else { return nil }
+        
+        if let rootVC = rootController as? UINavigationController {
+            return rootVC.visibleViewController
+        }
+        else if let rootVc = rootController as? UISplitViewController {
+            guard let navigationController = rootVc.viewControllers.first as? UINavigationController else { return nil }
+            return navigationController.topViewController
+        }
+        return nil
+    }
+    
     public static func registerFont(with data: Data?) -> String? {
         guard let data = data, let dataProvider = CGDataProvider(data: data as CFData) else { return nil }
         guard let cgFont = CGFont(dataProvider) else { return nil }
