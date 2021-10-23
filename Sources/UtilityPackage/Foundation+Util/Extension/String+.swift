@@ -25,7 +25,7 @@ public extension String {
         dateFormatter.dateFormat = formatter
         
         #if DEBUG
-        return  dateFormatter.date(from: self)!
+        return  dateFormatter.date(from: self) ?? Date()
         #else
         return  dateFormatter.date(from: self) ?? Date()
         #endif

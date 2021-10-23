@@ -16,7 +16,7 @@ open class HorizontalCollectionView: UIView {
     var collectionView:UICollectionView!
     public var reuseIdentifier: String = "ImageCollectionViewCellID" // any dummy id. overriding later on.
     public var reuseIdentifier2: String = ""
-    public var delegate: AnyObject? {
+    public weak var delegate: AnyObject? {
         willSet {
             collectionView.delegate = newValue as? UICollectionViewDelegate
             collectionView.dataSource = newValue as? UICollectionViewDataSource

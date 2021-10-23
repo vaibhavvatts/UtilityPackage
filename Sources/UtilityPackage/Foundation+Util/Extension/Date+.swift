@@ -9,6 +9,49 @@
 import Foundation
 
 public extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    
+    var getDateAndTime: String {
+        if Calendar.current.isDateInToday(self) { return "Today " + self.toString(dateFormat: "h:mm a") }
+        else if Calendar.current.isDateInTomorrow(self) { return "Tomorrow " + self.toString(dateFormat: "h:mm a") }
+        return self.toString(dateFormat: "MMM d, h:mm a")
+    }
+    
+    var getDate: String {
+        self.toString(dateFormat: "MMM d")
+    }
+    
+    func getTime() -> String {
+        self.toString(dateFormat: "HH:mm")
+    }
+    
+    var getTimeWithAMPM: String {
+        self.toString(dateFormat: "h:mm a")
+    }
+    
+    func getDays() -> String{
+        let currentDay: String = self.toString(dateFormat: "dd")
+        
+        if currentDay == Date.tomorrow.toString(dateFormat: "dd"){
+           return "Tomorrow"
+        }else if currentDay == Date().toString(dateFormat: "dd"){
+            return "Today"
+        }else{
+            return "\(self.days(from: Date())) days"
+        }
+    }
+    
     // Convert local time to UTC (or GMT)
     func toGlobalTime() -> Date {
         let timezone = TimeZone.current
