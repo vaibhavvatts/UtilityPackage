@@ -111,6 +111,23 @@ open class UtilityUIKit {
         cont?.present(alertController, animated: true, completion: nil)
     }
     
+    public class func addAlertController(messageString message:String, title: String?, firstTitle: String, secondTitle: String, tintColor: UIColor? = .red, firstHandler ok:(()->Void)?,secondHandler cancel:(()->Void)?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if let okHandler = ok {
+            alertController.addAction(UIAlertAction(title: firstTitle, style: .default, handler: { (action) in
+                okHandler()
+            }))
+        }
+        if let cancelHandler = cancel {
+            alertController.addAction(UIAlertAction(title:secondTitle , style: .destructive, handler: { (action) in
+                cancelHandler()
+            }))
+        }
+        UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
     public static func openSettings(title: String, message: String) {
         DispatchQueue.main.async {
             let alertController = UIAlertController (title: title, message: message, preferredStyle: .alert)
