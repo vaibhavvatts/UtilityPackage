@@ -17,9 +17,9 @@ public protocol HorizontalScrollControlSnippetProtocol: Hashable {
     var displayMultiple: (item1: T1, item2: T2, item3: T2) {get}
 }
 
-extension HorizontalScrollControlSnippetProtocol {
-    public var display: (item1: String, item2: String) { return ("", "") }
+public extension HorizontalScrollControlSnippetProtocol {
+    var display: (item1: String, item2: String) { return ("", "") }
     
-    public var displayMultiple: (item1: String, item2: String, item3: String) { return ("", "", "") }
+    var displayMultiple: (item1: String, item2: String, item3: String) { return ("", "", "") }
 }
 

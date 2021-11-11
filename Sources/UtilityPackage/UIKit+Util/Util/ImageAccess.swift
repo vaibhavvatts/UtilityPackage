@@ -16,8 +16,17 @@ public protocol ImageAccessDelegate {
 }
 
 public class ImageAccess: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    public var delegate: ImageAccessDelegate?
-    public var delegateViewController: UIViewController?
+    public init(delegate: ImageAccessDelegate? = nil, delegateViewController: UIViewController? = nil, title: String = "", subTitle: String = "") {
+        self.delegate = delegate
+        self.delegateViewController = delegateViewController
+        self.title = title
+        self.subTitle = subTitle
+    }
+    
+    private var delegate: ImageAccessDelegate?
+    private var delegateViewController: UIViewController?
+    private let title: String
+    private let subTitle: String
     
     public func askToOpenCameraOrGallerySheet() {
         if delegateViewController == nil { delegateViewController = UtilityUIKit.topViewController }
@@ -31,7 +40,7 @@ public class ImageAccess: NSObject, UIImagePickerControllerDelegate, UINavigatio
             imagePicker.cameraCaptureMode = .photo
             imagePicker.cameraDevice = .rear
             imagePicker.modalPresentationStyle = .overFullScreen
-            self.delegateViewController?.navigationController?.present(imagePicker, animated: true, completion: nil)
+            self.delegateViewController?.present(imagePicker, animated: true, completion: nil)
         }))
         actionCategory.append(ActionCategory(title: "Open Gallery", style: .default, handler: { [unowned self] in
             let imagePicker = UIImagePickerController()
@@ -48,7 +57,7 @@ public class ImageAccess: NSObject, UIImagePickerControllerDelegate, UINavigatio
         actionCategory.append(ActionCategory(title: "Cancel", style: .cancel, handler: {
             
         }))
-        if let alertController = delegateViewController?.showActionSheet(title: "********* title", message: "********* Subtitle", arrActionCategory: actionCategory) {
+        if let alertController = delegateViewController?.showActionSheet(title: self.title, message: self.subTitle, arrActionCategory: actionCategory) {
             alertController.popoverPresentationController?.sourceView = UtilityUIKit.topViewController?.view
             if let delegateViewController = delegateViewController {
                 alertController.popoverPresentationController?.sourceRect = CGRect(x: delegateViewController.view.centerX, y: delegateViewController.view.centerY, width: 0, height: 0)

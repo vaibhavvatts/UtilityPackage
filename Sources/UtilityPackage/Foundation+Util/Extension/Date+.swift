@@ -22,10 +22,29 @@ public extension Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
     
-    var getDateAndTime: String {
+    //FIX: FIX NAMES
+    var getDetailedDateAndTimeWithoutAmPm: String {
+        if Calendar.current.isDateInToday(self) { return "Today "}
+        else if Calendar.current.isDateInTomorrow(self) { return "Tomorrow "}
+        return self.toString(dateFormat: "MMM dd yyyy")
+    }
+    
+    var getDetailedDateAndTime: String {
         if Calendar.current.isDateInToday(self) { return "Today " + self.toString(dateFormat: "h:mm a") }
         else if Calendar.current.isDateInTomorrow(self) { return "Tomorrow " + self.toString(dateFormat: "h:mm a") }
+        return self.toString(dateFormat: "MMM dd yyyy, h:mm a")
+    }
+    
+    var getDateAndTime: String {
+        if Calendar.current.isDateInToday(self) { return "Today " + self.toString(dateFormat: "h:mm a") }
+        else if Calendar.current.isDateInTomorrow(self) { return "Tom.. " + self.toString(dateFormat: "h:mm a") }
         return self.toString(dateFormat: "MMM d, h:mm a")
+    }
+    
+    var getFormattedDate: String {
+        if Calendar.current.isDateInToday(self) { return "Today "}
+        else if Calendar.current.isDateInTomorrow(self) { return "Tomorrow "}
+        return self.toString(dateFormat: "MMM d")
     }
     
     var getDate: String {

@@ -19,9 +19,12 @@ public struct NavBarBtn: View {
     
     public var body: some View {
         HStack {
-            if imgName != nil { Image(systemName: imgName!) }
+            if imgName != nil {
+                Image(systemName: imgName!)
+                    .modifier(NavBtnImgModifier())
+            }
             Text(title ?? "")
+                .modifier(NavBtnTxtModifier())
         }
-        .modifier(NavBtnModifier())
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 #if !os(watchOS)
-public protocol HorizontalCollectionViewPortocol: AnyObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {}
+public protocol HorizontalCollectionViewPortocol: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {}
 
 open class HorizontalCollectionView: UIView {
     

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public enum UtilConstants {
     public static let dotMark = "• "
@@ -58,4 +59,17 @@ public enum UtilConstants {
     public static let trash = "Trash"
     public static let today = "Today"
     public static let tomorrow = "Tomorrow"
+    
+    public enum Spacing {
+        public static let outerPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 18
+        public static let intermidentPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 3 : 6
+        public static let intrimPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 4 : 6
+        
+        //new
+        public static let exteriorMargin: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 10 : 17
+//        public static let boxBottomPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 6 : 12
+        public static let boxIntermidentPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 4 : 7
+        
+        public static let interiorMargin: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 10 : 16
+    }
 }

@@ -20,11 +20,20 @@ public extension Binding {
     }
 }
 
-public struct NavBtnModifier: ViewModifier {
+public struct NavBtnImgModifier: ViewModifier {
     public init() {}
     public func body(content: Content) -> some View {
         content
-            .font(.system(size: 19, weight: .semibold, design: .rounded))
+            .font(.system(size: 15, weight: .semibold, design: .rounded))
+            .foregroundColor(ColorNames.theme)
+    }
+}
+
+public struct NavBtnTxtModifier: ViewModifier {
+    public init() {}
+    public func body(content: Content) -> some View {
+        content
+            .font(.system(size: 18, weight: .semibold, design: .rounded))
             .foregroundColor(ColorNames.theme)
     }
 }
@@ -34,7 +43,7 @@ public struct ModifierIndividualBackground: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .padding(8)
+            .padding(2*UtilConstants.Spacing.intrimPadding)
             .background(ColorNames.snippetBackground)
             .cornerRadius(7)
             .overlay(
@@ -49,7 +58,7 @@ public struct ModifierSnippetBackground: ViewModifier {
     
     public func body(content: Content) -> some View {
         content
-            .padding(10)
+            .padding(UtilConstants.Spacing.interiorMargin)
             .background(ColorNames.snippetBackground)
             .cornerRadius(7)
             .overlay(
@@ -58,14 +67,14 @@ public struct ModifierSnippetBackground: ViewModifier {
             )
     }
 }
-
+//FIX : 2*UtilConstants.Spacing.intrimPadding
 public struct ModifierSnippetChildBackground: ViewModifier {
     public init() {}
     
     public func body(content: Content) -> some View {
         content
             .font(.system(size: 17, weight: .semibold, design: .rounded))
-            .padding(8)
+            .padding(2*UtilConstants.Spacing.intrimPadding)
             .foregroundColor(ColorNames.warningColor)
             .background(ColorNames.unSelectedBg.opacity(0.2))
             .cornerRadius(7)

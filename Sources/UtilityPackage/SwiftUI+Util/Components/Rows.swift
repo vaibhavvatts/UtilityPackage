@@ -20,8 +20,8 @@ public struct TitleSubtitleRow: View {
     
     public var body: some View {
         HStack {
-            VStack {
-                if let titleIcon = titleIcon {
+            if let titleIcon = titleIcon {
+                VStack(alignment: .leading) {
                     Image(systemName: titleIcon)
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
                         .foregroundColor(ColorNames.keyWhite)
@@ -30,25 +30,22 @@ public struct TitleSubtitleRow: View {
                     Spacer()
                 }
             }
-            VStack {
-                HStack {
-                    if let title = title {
-                        Text(title)
-                            .font(.system(size: 20, weight: .semibold, design: .rounded))
-                            .foregroundColor(ColorNames.keyWhite)
-                        
-                        Spacer()
-                    }
+            VStack(alignment: .leading) {
+                if let title = title {
+                    Text(title)
+                        .font(.system(size: 18, weight: .medium, design: .rounded))
+                        .foregroundColor(ColorNames.keyWhite)
+                    
+//                    Spacer()
                 }
-                HStack {
-                    if let subtitle = subtitle {
+                if let subtitle = subtitle {
+                    HStack {
                         Text(subtitle)
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundColor(ColorNames.keyGray)
-                        
+                            .multilineTextAlignment(.leading)
                         Spacer()
                     }
-                    
                 }
             }
         }

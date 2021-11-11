@@ -88,6 +88,8 @@ public class LocalNotifications {
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ?? "Default.mp3"))
         content.body = payload.body
         
+//        content.attachments = createImageAttachment(image: UIImage(named: "tmp"))
+        
         if let date = payload.dateTime {
             print(date)
             let triggerComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
@@ -114,3 +116,29 @@ public class LocalNotifications {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ids)
     }
 }
+
+
+extension UIImage {
+    func createLocalURL(imageName: String) -> URL? {
+        let fileManager = FileManager.default
+        guard let cacheDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        let url = cacheDirectory.appendingPathComponent("\(imageName).png")
+
+        guard fileManager.fileExists(atPath: url.path) else {
+            guard let data = self.pngData() else { return nil }
+            fileManager.createFile(atPath: url.path, contents: data, attributes: nil)
+            return url
+        }
+
+        return url
+    }
+}
+
+func createImageAttachment(image: UIImage?, imgName: String) -> UNNotificationAttachment? {
+        if let image = image,
+            let imageUrl = image.createLocalURL(imageName: imgName),
+           let attachment = try? UNNotificationAttachment(identifier: imgName, url: imageUrl, options: nil) { attachment }
+        return nil
+    }

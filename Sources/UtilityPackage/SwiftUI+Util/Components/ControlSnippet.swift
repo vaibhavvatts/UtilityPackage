@@ -95,7 +95,7 @@ public struct IconTextLayoutSV: View {
             Image(systemName: iconName)
             Text(text)
         }
-        .font(.system(size: 17, weight: .medium, design: .rounded))
+        .font(.system(size: 16, weight: .medium, design: .rounded))
         .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.6))
     }
 }
