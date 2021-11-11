@@ -111,8 +111,7 @@ open class UtilityUIKit {
         cont?.present(alertController, animated: true, completion: nil)
     }
     
-    public class func addAlertController(onViewController controller:UIViewController,messageString message:String, title: String?, firstTitle: String, secondTitle: String, tintColor: UIColor? = .red, okHandler ok:(()->Void)?,cancelHandler cancel:(()->Void)?) {
-        weak var cont = controller
+    public class func addAlertController(messageString message:String, title: String?, firstTitle: String, secondTitle: String, tintColor: UIColor? = .red, firstHandler ok:(()->Void)?,secondHandler cancel:(()->Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         if let okHandler = ok {
             alertController.addAction(UIAlertAction(title: firstTitle, style: .default, handler: { (action) in
@@ -124,8 +123,7 @@ open class UtilityUIKit {
                 cancelHandler()
             }))
         }
-//        alertController.view.tintColor = tintColor
-        cont?.present(alertController, animated: true, completion: nil)
+        UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
     }
     
     

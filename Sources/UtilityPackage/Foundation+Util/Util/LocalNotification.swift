@@ -28,7 +28,7 @@ public struct PayloadLocalNotification {
     public var body: String
     public var time: TimeInterval?
     public var dateTime: Date?
-    public var sound: String?
+    public var sound: String
     public var recurringTime: Float = 60.0
 }
 
@@ -67,7 +67,7 @@ public class LocalNotifications {
         let content = UNMutableNotificationContent()
         content.title = payload.title
         content.subtitle = payload.subTitle
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ?? "Default.mp3"))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ))
         content.body = payload.body
         
         let thisTime:TimeInterval = 60.0 // 1 minute = 60 seconds
@@ -85,7 +85,7 @@ public class LocalNotifications {
         let content = UNMutableNotificationContent()
         content.title = payload.title
         content.subtitle = payload.subTitle
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound!))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound))
         content.body = payload.body
         
         if let date = payload.dateTime {
