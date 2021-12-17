@@ -73,6 +73,7 @@ public enum UtilConstants {
     public static let deletePermanently = "Delete Permanently"
     public static let tapAgainToPause = "1. Tap again 'Read out' button to Stop. \n2. Device should NOT be in Silent Mode. \n3. Visit Note settings to change Voice options."
     public static let photoAccessFailureMessage = "To save Wallpapers, you must allow photo permission from Settings."
+    public static let allowNotifications = "Allow Notifications!"   
     
     public enum Spacing {
         public static let outerPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 18

@@ -32,13 +32,6 @@ public struct PayloadLocalNotification {
     public var recurringTime: Float = 60.0
 }
 
-private var notificationFailureMessage: String {
-#if targetEnvironment(macCatalyst)
-    return UtilConstants.prferencesNotification
-    #endif
-    return UtilConstants.notificationFailureMessage
-}
-
 public class LocalNotifications {
     public static func requestAuthorization() {
         UNUserNotificationCenter.current().getNotificationSettings { status in
@@ -49,8 +42,7 @@ public class LocalNotifications {
             }
             else if status.authorizationStatus != .authorized {
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: UtilConstants.important, message: notificationFailureMessage, preferredStyle: UIAlertController.Style.alert)
-#if !targetEnvironment(macCatalyst)
+                    let alert = UIAlertController(title: UtilConstants.allowNotifications, message: UtilConstants.notificationFailureMessage, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: UtilConstants.goToSettings, style: UIAlertAction.Style.default, handler: { _ in
                         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                             return
@@ -62,7 +54,6 @@ public class LocalNotifications {
                             })
                         }
                     }))
-#endif
                     alert.addAction(UIAlertAction(title: UtilConstants.cancel, style: UIAlertAction.Style.default, handler: nil))
                     UtilityUIKit.topViewController?.present(alert, animated: true, completion: nil)
                 }
