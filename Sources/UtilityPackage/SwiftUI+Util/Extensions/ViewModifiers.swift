@@ -81,3 +81,16 @@ public struct ModifierSnippetChildBackground: ViewModifier {
             .shadow(color: Color.white.opacity(0.2), radius: 1)
     }
 }
+
+public struct HorizontalScrollElementModifier: ViewModifier {
+    public init() {}
+    
+    public func body(content: Content) -> some View {
+        content
+            .padding(8)
+            .foregroundColor(Color.white)
+            .background(ColorNames.unSelectedBg.opacity(0.2))
+            .cornerRadius(7)
+            .shadow(color: Color.white.opacity(0.2), radius: 1)
+    }
+}

@@ -44,8 +44,10 @@ public struct TitleSubtitleRow: View {
                             .font(.system(size: 14, weight: .medium, design: .rounded))
                             .foregroundColor(ColorNames.keyGray)
                             .multilineTextAlignment(.leading)
+                            
                         Spacer()
                     }
+                    
                 }
             }
         }
