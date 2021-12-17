@@ -59,6 +59,7 @@ public enum UtilConstants {
     public static let trash = "Trash"
     public static let today = "Today"
     public static let tomorrow = "Tomorrow"
+    public static let allowNotifications = "Allow Notifications!"
     
     public enum Spacing {
         public static let outerPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 18

@@ -52,6 +52,19 @@ open class UtilityUIKit {
         return nil
     }
     
+    public static var topVC: UIViewController? {
+        guard let rootController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController else { return nil }
+        
+        if let rootVC = rootController as? UINavigationController {
+            return rootVC.visibleViewController
+        }
+        else if let rootVc = rootController as? UISplitViewController {
+            guard let navigationController = rootVc.viewControllers.first as? UINavigationController else { return nil }
+            return navigationController.topViewController
+        }
+        return nil
+    }
+    
     public static func registerFont(with data: Data?) -> String? {
         guard let data = data, let dataProvider = CGDataProvider(data: data as CFData) else { return nil }
         guard let cgFont = CGFont(dataProvider) else { return nil }
@@ -97,6 +110,23 @@ open class UtilityUIKit {
         alertController.view.tintColor = tintColor
         cont?.present(alertController, animated: true, completion: nil)
     }
+    
+    public class func addAlertController(messageString message:String, title: String?, firstTitle: String, secondTitle: String, tintColor: UIColor? = .red, firstHandler ok:(()->Void)?,secondHandler cancel:(()->Void)?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if let okHandler = ok {
+            alertController.addAction(UIAlertAction(title: firstTitle, style: .default, handler: { (action) in
+                okHandler()
+            }))
+        }
+        if let cancelHandler = cancel {
+            alertController.addAction(UIAlertAction(title:secondTitle , style: .destructive, handler: { (action) in
+                cancelHandler()
+            }))
+        }
+        UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     public static func openSettings(title: String, message: String) {
         DispatchQueue.main.async {

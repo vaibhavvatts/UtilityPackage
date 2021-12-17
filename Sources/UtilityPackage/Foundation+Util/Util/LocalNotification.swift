@@ -11,7 +11,7 @@ import UserNotifications
 import UIKit
 
 public struct PayloadLocalNotification {
-    public init(id: String, title: String, subTitle: String, body: String, time: TimeInterval? = nil, dateTime: Date? = nil, sound: String? = nil, recurringTime: Float = 60.0) {
+    public init(id: String, title: String, subTitle: String, body: String, time: TimeInterval? = nil, dateTime: Date? = nil, sound: String = "Default.mp3", recurringTime: Float = 60.0) {
         self.id = id
         self.title = title
         self.subTitle = subTitle
@@ -28,7 +28,7 @@ public struct PayloadLocalNotification {
     public var body: String
     public var time: TimeInterval?
     public var dateTime: Date?
-    public var sound: String?
+    public var sound: String
     public var recurringTime: Float = 60.0
 }
 
@@ -42,7 +42,7 @@ public class LocalNotifications {
             }
             else if status.authorizationStatus != .authorized {
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: UtilConstants.important, message: UtilConstants.notificationFailureMessage, preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: UtilConstants.allowNotifications, message: UtilConstants.notificationFailureMessage, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: UtilConstants.goToSettings, style: UIAlertAction.Style.default, handler: { _ in
                         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                             return
@@ -67,14 +67,14 @@ public class LocalNotifications {
         let content = UNMutableNotificationContent()
         content.title = payload.title
         content.subtitle = payload.subTitle
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ?? "Default.mp3"))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ))
         content.body = payload.body
-        
         
         let thisTime:TimeInterval = 60.0 // 1 minute = 60 seconds
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: thisTime, repeats: true)
         let request = UNNotificationRequest(identifier: payload.id, content: content, trigger: trigger)
+        
         UNUserNotificationCenter.current().add(request)
         
     }
@@ -85,7 +85,7 @@ public class LocalNotifications {
         let content = UNMutableNotificationContent()
         content.title = payload.title
         content.subtitle = payload.subTitle
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ?? "Default.mp3"))
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound))
         content.body = payload.body
         
 //        content.attachments = createImageAttachment(image: UIImage(named: "tmp"))
