@@ -21,7 +21,7 @@ open class HapticEngine {
     }
     
     class public func generateSoftHaptic() {
-        HapticEngine.generate(.soft)
+        HapticEngine.generate(.light)
     }
     
     class public func generateHeavyHaptic() {

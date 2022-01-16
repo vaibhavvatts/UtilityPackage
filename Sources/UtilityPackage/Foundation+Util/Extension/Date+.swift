@@ -51,6 +51,10 @@ public extension Date {
         self.toString(dateFormat: "MMM d")
     }
     
+    var getDateMDY: String {
+        self.toString(dateFormat: "MMM d yy")
+    }
+    
     func getTime() -> String {
         self.toString(dateFormat: "HH:mm")
     }

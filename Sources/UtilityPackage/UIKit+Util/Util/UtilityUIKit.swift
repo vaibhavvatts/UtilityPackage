@@ -23,6 +23,13 @@ open class UtilityUIKit {
         return nil
     }
     
+    public static func popTopViewController() {
+        topViewController?.navigationController?.popViewController(animated: true)
+    }
+    
+    public static func dismissTopViewController() {
+        topViewController?.dismiss(animated: true)
+    }
   
     public static func pushOnTopNav(to viewController: UIViewController) {
         if let topVc = topViewController {
@@ -126,7 +133,11 @@ open class UtilityUIKit {
         UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
     }
     
-    
+    public static func somethingWentWrongAlert(message: String) {
+        addAlertController(messageString: message, title: UtilConstants.somethingWentWrong, firstTitle: UtilConstants.okay, secondTitle: "", tintColor: nil, firstHandler: {
+            
+        }, secondHandler: nil)
+    }
     
     public static func openSettings(title: String, message: String) {
         DispatchQueue.main.async {

@@ -24,4 +24,14 @@ public extension Int {
         formatter.numberStyle = .ordinal
         return formatter
     }
+    
+    var isEmpty: Bool { (self == 0) }
+    
+    var toInt64: Int64 { Int64(self) }
+}
+
+public extension Int64 {
+    var isEmpty: Bool { (self == 0) }
+    
+    var toInt: Int { Int(self) }
 }

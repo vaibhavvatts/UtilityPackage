@@ -31,4 +31,18 @@ public extension String {
         #endif
         
     }
+    
+    var getLanguage: String? {
+        guard let languageCode = self.components(separatedBy: "-").first else { return nil }
+        let locale: Locale = .current
+        let language = locale.localizedString(forLanguageCode: languageCode)
+        return language
+    }
+    
+    var getCountry: String? {
+        guard let countryCode = self.components(separatedBy: "-").last else { return nil }
+        let locale: Locale = .current
+        let country = locale.localizedString(forRegionCode: countryCode)
+        return country
+    }
 }

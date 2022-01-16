@@ -19,6 +19,7 @@ public enum ColorNames {
     public static let footNote = Color("footNote")
     public static let tagSelection = Color("tagSelection")
     public static let snippetBackground = Color("snippetBackground")
+    public static let screenBackground = Color("screenBackground")
     
     // keycolors
     public static let keyBlue = Color("keyBlue")

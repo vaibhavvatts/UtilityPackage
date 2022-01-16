@@ -155,7 +155,7 @@ public struct HorizontalScrollSnippetControlView<T: HorizontalScrollControlSnipp
                 ForEach(self.arrData, id: \.self) { obj in
                     Button(action: {
                         self.closureSelecedObj(obj)
-                        HapticEngine.generate(.soft)
+                        HapticEngine.generateSoftHaptic()
                     }) {
                         self.content(obj)
                             .modifier(ModifierSnippetChildBackground())
@@ -185,7 +185,7 @@ public struct RingSnippetControlView<T: HorizontalScrollControlSnippetProtocol, 
                 ForEach(self.arrData, id: \.self) { obj in
                     Button(action: {
                         self.closureSelecedObj(obj)
-                        HapticEngine.generate(.soft)
+                        HapticEngine.generateSoftHaptic()
                     }) {
                         self.content(obj)
                     }
