@@ -24,7 +24,7 @@ public struct TitleSubtitleRow: View {
                 VStack(alignment: .leading) {
                     Image(systemName: titleIcon)
                         .font(.system(size: 20, weight: .semibold, design: .rounded))
-                        .foregroundColor(ColorNames.keyWhite)
+                        .foregroundColor(ViewColor.viewWhite)
                         .padding(.top, 4)
                     
                     Spacer()
@@ -34,7 +34,7 @@ public struct TitleSubtitleRow: View {
                 if let title = title {
                     Text(title)
                         .font(.system(size: 18, weight: .medium, design: .rounded))
-                        .foregroundColor(ColorNames.keyWhite)
+                        .foregroundColor(ViewColor.viewWhite)
                     
 //                    Spacer()
                 }

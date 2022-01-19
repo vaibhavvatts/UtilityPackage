@@ -51,6 +51,7 @@ public enum UtilConstants {
     public static let blur = "Blur"
     public static let image = "Image"
     public static let presets = "Presets"
+    public static let unsplash = "Unsplash"
     public static let dismiss = "Dismiss"
     public static let sounds = "Sounds"
     public static let remove = "Remove"
@@ -108,6 +109,12 @@ public enum UtilConstants {
     public static let recording = "Recording"
     public static let retake = "Retake"
     public static let retakeRecording = "Do you want to take Fresh recording by discarding the existing one ?"
+    public static let recover = "Recover"
+    public static let all = "All"
+    public static let isAutoSnoozeActive = "Is Auto Snooze Active"
+    public static let inActive = "Inactive"
+    public static let list = "List"
+    public static let quotes = "Quotes"
     
     public enum Spacing {
         public static let outerPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 18

@@ -44,11 +44,11 @@ public struct ModifierIndividualBackground: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .padding(2*UtilConstants.Spacing.intrimPadding)
-            .background(ColorNames.snippetBackground)
+            .background(ViewColor.gray1)
             .cornerRadius(7)
             .overlay(
                 RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                    .stroke(ViewColor.viewWhite.opacity(0.06), lineWidth: 1)
             )
     }
 }
@@ -59,11 +59,11 @@ public struct ModifierSnippetBackground: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .padding(UtilConstants.Spacing.interiorMargin)
-            .background(ColorNames.snippetBackground)
+            .background(ViewColor.gray1)
             .cornerRadius(7)
             .overlay(
                 RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                    .stroke(ViewColor.viewWhite.opacity(0.06), lineWidth: 1)
             )
     }
 }
@@ -76,9 +76,9 @@ public struct ModifierSnippetChildBackground: ViewModifier {
             .font(.system(size: 17, weight: .semibold, design: .rounded))
             .padding(2*UtilConstants.Spacing.intrimPadding)
             .foregroundColor(ColorNames.warningColor)
-            .background(ColorNames.unSelectedBg.opacity(0.2))
+            .background(ViewColor.gray2.opacity(0.2))
             .cornerRadius(7)
-            .shadow(color: Color.white.opacity(0.2), radius: 1)
+            .shadow(color: ViewColor.viewWhite.opacity(0.2), radius: 1)
     }
 }
 
@@ -88,9 +88,9 @@ public struct HorizontalScrollElementModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .padding(8)
-            .foregroundColor(Color.white)
-            .background(ColorNames.unSelectedBg.opacity(0.2))
+            .foregroundColor(ViewColor.viewWhite)
+            .background(ViewColor.gray2.opacity(0.2))
             .cornerRadius(7)
-            .shadow(color: Color.white.opacity(0.2), radius: 1)
+            .shadow(color: ViewColor.viewWhite.opacity(0.2), radius: 1)
     }
 }

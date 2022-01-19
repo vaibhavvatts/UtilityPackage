@@ -12,14 +12,11 @@ public enum ColorNames {
     public static let seperator = Color("seperator")
     public static let selected = Color("selected")
     public static let unSelected = Color("unSelected")
-    public static let unSelectedBg = Color("unSelectedBg")
     public static let theme = Color("theme")
     public static let dullBg = Color("dullBg")
     public static let title = Color("title")
     public static let footNote = Color("footNote")
     public static let tagSelection = Color("tagSelection")
-    public static let snippetBackground = Color("snippetBackground")
-    public static let screenBackground = Color("screenBackground")
     
     // keycolors
     public static let keyBlue = Color("keyBlue")
@@ -40,4 +37,14 @@ public enum ColorNames {
 public struct ColorNameUIKit {
     public static let theme = UIColor(named: "theme")
     public static let theme2 = UIColor(named: "theme2")
+    
+    public static let viewBlack = UIColor(named: "viewBlack")
+    public static let viewWhite = UIColor(named: "viewWhite")
+}
+
+public struct ViewColor { // view Colors
+    public static let viewBlack = Color("viewBlack")
+    public static let viewWhite = Color("viewWhite")
+    public static let gray1 = Color("gray1")
+    public static let gray2 = Color("gray2")
 }

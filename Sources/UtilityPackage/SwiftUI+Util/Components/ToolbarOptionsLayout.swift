@@ -13,7 +13,7 @@ public struct ToolbarOptionsLayout: View {
     private var isSelected = false
     private var selectionColor: Color
     
-    public init(iconName: String, text: String = "", isSelected: Bool = false, selectionColor: Color = .white) {
+    public init(iconName: String, text: String = "", isSelected: Bool = false, selectionColor: Color = ViewColor.viewWhite) {
         self.iconName = iconName
         self.text = text
         self.isSelected = isSelected
@@ -29,9 +29,9 @@ public struct ToolbarOptionsLayout: View {
             if !text.isEmpty {
                 Text(text)
                     .font(.system(size: 14, weight: .medium, design: .rounded))
-                    .padding(.leading, iconName.isEmpty ? 0 : -4)
+                    .padding(.leading, iconName.isEmpty ? 0 : -5)
             }
         }
-        .foregroundColor(isSelected ? selectionColor : .white)
+        .foregroundColor(isSelected ? selectionColor : ViewColor.viewWhite)
     }
 }

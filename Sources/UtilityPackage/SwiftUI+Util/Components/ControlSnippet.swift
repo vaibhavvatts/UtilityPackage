@@ -25,14 +25,14 @@ public struct ControlSnippetTitle: View {
             Spacer()
         }
         .font(.system(size: 17, weight: .semibold, design: .rounded))
-        .foregroundColor(Color.white)
+        .foregroundColor(ViewColor.viewWhite)
     }
 }
 
 @available(iOS 13, *)
 public struct DotResultantView: View {
     public var title: String
-    public var colorName: Color = .white
+    public var colorName: Color = ViewColor.viewWhite
     
     public init(title: String, colorName: Color) {
         self.title = title
@@ -60,7 +60,7 @@ public struct SettingSnippetResultantText: View {
     public var body: some View {
         Text(title)
             .font(.system(size: 18, weight: .semibold, design: .rounded))
-            .foregroundColor(Color.white)
+            .foregroundColor(ViewColor.viewWhite)
     }
 }
 
@@ -96,7 +96,7 @@ public struct IconTextLayoutSV: View {
             Text(text)
         }
         .font(.system(size: 16, weight: .medium, design: .rounded))
-        .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.6))
+        .foregroundColor(isSelected ? ViewColor.viewWhite : ViewColor.viewWhite.opacity(0.6))
     }
 }
 
@@ -132,7 +132,7 @@ public struct TileBottomButtonStyle: View {
                 .padding(.leading, -4)
         }
         .font(.system(size: 16, weight: .medium, design: .rounded))
-        .foregroundColor(isSelected ? Color.white : Color.white.opacity(0.7))
+        .foregroundColor(isSelected ? ViewColor.viewWhite : ViewColor.viewWhite.opacity(0.7))
     }
 }
 
@@ -210,7 +210,7 @@ public struct SettingSnippetItemText: View {
     public var body: some View {
         Text(title)
             .font(fontName == nil ? .system(size: 16, weight: .semibold, design: .rounded) : .custom(fontName ?? "", size: 17))
-            .foregroundColor(isSelected ? Color.white : Color.gray.opacity(0.9))
+            .foregroundColor(isSelected ? ViewColor.viewWhite : Color.gray.opacity(0.9))
     }
 }
 
@@ -226,7 +226,7 @@ public struct ImageSnippetItem: View {
     public var body: some View {
         imgName
             .font(.system(size: 17, weight: .semibold, design: .rounded))
-            .foregroundColor(isSelected ? Color.white : Color.gray.opacity(0.8))
+            .foregroundColor(isSelected ? ViewColor.viewWhite : Color.gray.opacity(0.8))
     }
 }
 
@@ -246,6 +246,6 @@ public  struct SettingSnippetSecondryItemText: View {
     public var body: some View {
         Text(title)
             .font(.system(size: 10, weight: .semibold, design: .rounded))
-            .foregroundColor(isSelected ? Color.white : Color.gray.opacity(0.9))
+            .foregroundColor(isSelected ? ViewColor.viewWhite : Color.gray.opacity(0.9))
     }
 }
