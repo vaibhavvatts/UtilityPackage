@@ -40,8 +40,8 @@ public class LocalNotifications {
                     
                 }
             }
-            else if status.authorizationStatus != .authorized {
-                DispatchQueue.main.async {
+            else if status.authorizationStatus != .authorized || status.authorizationStatus == .denied{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                     let alert = UIAlertController(title: UtilConstants.allowNotifications, message: UtilConstants.notificationFailureMessage, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: UtilConstants.goToSettings, style: UIAlertAction.Style.default, handler: { _ in
                         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
