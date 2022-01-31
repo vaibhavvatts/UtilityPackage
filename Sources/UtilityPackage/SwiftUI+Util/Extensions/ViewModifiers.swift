@@ -24,8 +24,8 @@ public struct NavBtnImgModifier: ViewModifier {
     public init() {}
     public func body(content: Content) -> some View {
         content
-            .font(.system(size: 15, weight: .semibold, design: .rounded))
-            .foregroundColor(ColorNames.theme)
+            .font(.system(size: 15, weight: .medium, design: .rounded))
+            .foregroundColor(ThemeColors.activeThemeColor)
     }
 }
 
@@ -33,8 +33,8 @@ public struct NavBtnTxtModifier: ViewModifier {
     public init() {}
     public func body(content: Content) -> some View {
         content
-            .font(.system(size: 18, weight: .semibold, design: .rounded))
-            .foregroundColor(ColorNames.theme)
+            .font(.system(size: 18, weight: .medium, design: .rounded))
+            .foregroundColor(ThemeColors.activeThemeColor)
     }
 }
 

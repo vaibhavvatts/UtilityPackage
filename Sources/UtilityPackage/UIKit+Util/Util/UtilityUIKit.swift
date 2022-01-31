@@ -23,6 +23,14 @@ open class UtilityUIKit {
         return nil
     }
     
+    public static func changeAppearanceMode(value: Int) {
+        for scene in UIApplication.shared.connectedScenes {
+            if let window = (((scene as? UIWindowScene)?.delegate as? UIWindowSceneDelegate)?.window) {
+                window?.overrideUserInterfaceStyle = UIUserInterfaceStyle(rawValue: value) ?? .dark
+            }
+        }
+    }
+    
     public static func popTopViewController() {
         topViewController?.navigationController?.popViewController(animated: true)
     }
@@ -130,7 +138,9 @@ open class UtilityUIKit {
                 cancelHandler()
             }))
         }
-        UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
+        }
     }
     
     public static func somethingWentWrongAlert(message: String) {

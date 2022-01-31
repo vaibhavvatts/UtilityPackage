@@ -18,7 +18,7 @@ public struct NavBarBtn: View {
     }
     
     public var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             if imgName != nil {
                 Image(systemName: imgName!)
                     .modifier(NavBtnImgModifier())

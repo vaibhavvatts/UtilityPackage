@@ -40,7 +40,7 @@ class ReusableNavBar: UIView {
         self.addSubview(navigationBar)
         navigationBar.fillSuperview()
         
-        navigationBar.barTintColor = .white
+        navigationBar.barTintColor = ColorNameUIKit.viewWhite
        // navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Theme.boldLabelFont!,
                                              //NSAttributedString.Key.foregroundColor: Theme.regularLabelColor!]
         navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

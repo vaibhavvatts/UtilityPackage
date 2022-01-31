@@ -51,7 +51,7 @@ public class ImageAccess: NSObject, UIImagePickerControllerDelegate, UINavigatio
             imagePicker.navigationBar.barTintColor = UtilityUIKit.topViewController?.navigationController?.navigationBar.barTintColor
             imagePicker.navigationBar.tintColor = UIColor.darkGray
             self.delegateViewController?.navigationController?.navigationBar.isHidden = false
-            imagePicker.navigationBar.titleTextAttributes = [NSAttributedString.Key.strokeColor: UIColor.white, NSAttributedString.Key.foregroundColor: UIColor.white]
+            imagePicker.navigationBar.titleTextAttributes = [NSAttributedString.Key.strokeColor: ColorNameUIKit.viewWhite, NSAttributedString.Key.foregroundColor: ColorNameUIKit.viewWhite]
             self.delegateViewController?.present(imagePicker, animated: true, completion: nil)
         }))
         actionCategory.append(ActionCategory(title: "Cancel", style: .cancel, handler: {
