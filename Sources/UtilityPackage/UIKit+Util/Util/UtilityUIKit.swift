@@ -149,6 +149,12 @@ open class UtilityUIKit {
         }, secondHandler: nil)
     }
     
+    public static func defaultAlert(message: String) {
+        addAlertController(messageString: message, title: "", firstTitle: UtilConstants.okay, secondTitle: "", tintColor: nil, firstHandler: {
+            
+        }, secondHandler: nil)
+    }
+    
     public static func openSettings(title: String, message: String) {
         DispatchQueue.main.async {
             let alertController = UIAlertController (title: title, message: message, preferredStyle: .alert)

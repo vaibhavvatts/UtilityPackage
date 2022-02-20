@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public enum UtilConstants {
-    public static var screenDimention: (height: CGFloat, width: CGFloat) { return (UIScreen.main.bounds.height, UIScreen.main.bounds.width) }
+    public static var screenDimension: (height: CGFloat, width: CGFloat) { return (UIScreen.main.bounds.height, UIScreen.main.bounds.width) }
     
     public static let dotMark = "• "
     public static let done = "Done"
@@ -22,23 +22,32 @@ public enum UtilConstants {
     public static let settings = "Configure"
     public static let back = "Back"
     public static let gradient = "Gradient"
-    public static let important = "Important!"
+    public static let important = "Important"
     public static let oh = "Ohh ho!"
+    public static let select = "Select"
     public static let great = "Great"
+    public static let keepThere = "Keep there"
+    public static let moveDown = "Move down"
+    public static let hide = "Hide"
     public static let okay = "Okay"
+    public static let shuffle = "Shuffle"
     public static let understand = "I Understand"
     public static let edit = "Edit"
-    public static let lockNotes = "Lock Notes"
+    public static let folder = "Folder"
+    public static let lockApp = "Lock App"
     public static let themes = "Themes"
     public static let title = "Note"
+    public static let lock = "Lock"
     public static let photo = "Photo"
     public static let album = "Album"
     public static let cancel = "Cancel"
     public static let alert = "Alert"
+    public static let unlock = "Unlock"
     public static let skip = "Skip"
     public static let gotIt = "Got it!"
     public static let reminder = "Reminder"
     public static let dueDate = "Due Date"
+    public static let priority = "Priority"
     public static let startDate = "Start Date"
     public static let favourite = "Important"
     public static let wallpaper = "Wallpaper"
@@ -50,6 +59,10 @@ public enum UtilConstants {
     public static let error = "Error"
     public static let help = "Help & How to"
     public static let Down = "Down"
+    public static let pinToTop = "Pin to Top"
+    public static let Unpin = "Unpin"
+    public static let slideToTop = "Slide to Top"
+    public static let unSlide = "Unslide"
     public static let improvemetsFeedback = "Improvement & Feedback"
     public static let blur = "Blur"
     public static let image = "Image"
@@ -61,11 +74,13 @@ public enum UtilConstants {
     public static let duplicate = "Duplicate"
     public static let saveAndExit = "Save & Exit"
     public static let exit = "Exit"
+    public static let no = "No"
     public static let disappear = "Disappear"
     public static let goToSettings = "Go to Settings"
     public static let notificationFailureMessage = "To receive reminders, you must allow notifications from Settings."
     public static let trash = "Trash Bin"
     public static let today = "Today"
+    public static let new = "New"
     public static let tomorrow = "Tomorrow"
     public static let prferencesNotification = "Go to Preferences -> Notifications & Focus and Allow Notifications for this App."
     public static let shareText = "Share Text"
@@ -77,7 +92,12 @@ public enum UtilConstants {
     public static let controlCenter = "Control Center"
     public static let small = "Small"
     public static let medium = "Medium"
+    public static let high = "High"
+    public static let urgent = "Urgent"
     public static let large = "Large"
+    public static let groups = "Groups"
+    public static let folders = "Folders"
+    public static let sorting = "Sorting"
     public static let deletePermanently = "Delete Permanently"
     public static let tapAgainToPause = "1. Tap again 'Text to Speech' button to Stop. \n2. Device should NOT be in Silent Mode. \n3. Visit Note settings to change Voice options."
     public static let photoAccessFailureMessage = "To save Wallpapers, you must allow photo permission from Settings."
@@ -94,8 +114,11 @@ public enum UtilConstants {
     public static let none = "None"
     public static let specificTimes = "Specific Times"
     public static let everyXHour = "Every x Hours"
+    public static let pending = "Pending"
+    public static let completed = "Completed"
     public static let addTime = "Add Time"
     public static let startTime = "Start Time"
+    public static let moveToTrash = "Move to Trash"
     public static let repeatConstant = "Repeat"
     public static let timesADay = "Times a Day"
     public static let endTimes = "End Times"
@@ -122,6 +145,8 @@ public enum UtilConstants {
     public static let inActive = "Inactive"
     public static let list = "List"
     public static let bullet = "Bullet"
+    public static let recentlyCreated = "Recently Created"
+    public static let orderBy = "Order By"
     public static let quotes = "Quotes"
     public static let library = "Library"
     public static let internetIssueTryAgain = "Please Check your internet connection and Try Again"
@@ -129,14 +154,16 @@ public enum UtilConstants {
     
     public enum Spacing {
         public static let outerPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 16 : 18
-        public static let intermidentPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 3 : 6
+        public static let intermittentPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 3 : 6
         public static let intrimPadding:CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 4 : 6
         
         //new
         public static let exteriorMargin: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 10 : 17
 //        public static let boxBottomPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 6 : 12
-        public static let boxIntermidentPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 4 : 7
+        public static let boxIntermittentPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 4 : 7
         
         public static let interiorMargin: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 10 : 16
+        
+        public static let snippetPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 14 : 16
     }
 }

@@ -24,7 +24,7 @@ public struct ControlSnippetTitle: View {
             Text(title)
             Spacer()
         }
-        .font(.system(size: 17, weight: .semibold, design: .rounded))
+        .font(.system(size: 16, weight: .medium, design: .rounded))
         .foregroundColor(ViewColor.viewWhite)
     }
 }
@@ -95,7 +95,7 @@ public struct IconTextLayoutSV: View {
             Image(systemName: iconName)
             Text(text)
         }
-        .font(.system(size: 16, weight: .medium, design: .rounded))
+        .font(.system(size: 14, weight: .medium, design: .rounded))
         .foregroundColor(isSelected ? ViewColor.viewWhite : ViewColor.viewWhite.opacity(0.6))
     }
 }
@@ -166,8 +166,6 @@ public struct HorizontalScrollSnippetControlView<T: HorizontalScrollControlSnipp
     }
 }
 
-
-
 public struct RingSnippetControlView<T: HorizontalScrollControlSnippetProtocol, Content>: View where Content : View {
     public init(arrData: [T], closureSelecedObj: @escaping (T) -> (), content: @escaping (T) -> Content) {
         self.arrData = arrData
@@ -189,6 +187,7 @@ public struct RingSnippetControlView<T: HorizontalScrollControlSnippetProtocol, 
                     }) {
                         self.content(obj)
                     }
+                    .buttonStyle(CustomButtonStyle())
                 }
             }
         }

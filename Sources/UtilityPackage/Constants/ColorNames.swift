@@ -50,9 +50,26 @@ public struct ThemeColors {
     public static let theme3 = Color("theme3")
 }
 
-public struct ViewColor { // view Colors
+public struct ViewColor {
     public static let viewBlack = Color("viewBlack")
     public static let viewWhite = Color("viewWhite")
     public static let gray1 = Color("gray1")
     public static let gray2 = Color("gray2")
+    public static let dimFootnote = Color("dimFootnote")
+    public static let selective = Color("selective")
+    public static let snippet1 = Color("snippet1")
+}
+
+public struct GroupColor {
+    public static let gc1 = Color("gc1")
+    public static let gc2 = Color("gc2")
+    public static let gc3 = Color("gc3")
+    public static let gc4 = Color("gc4")
+    public static let gc5 = Color("gc5")
+    public static let gc6 = Color("gc6")
+    public static let gc7 = Color("gc7")
+    public static let gc8 = Color("gc8")
+    public static let gc9 = Color("gc9")
+    public static let gc10 = Color("gc10")
+    public static let gc11 = Color("gc11")
 }

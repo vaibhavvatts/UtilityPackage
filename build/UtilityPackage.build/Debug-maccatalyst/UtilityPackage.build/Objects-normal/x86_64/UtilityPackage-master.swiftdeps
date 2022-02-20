@@ -1,0 +1,109 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "b3c63638f82182acac600d7bb598724ca4bc6c8347b5f864d9f7c3f2c787e2a4"
+build_start_time: [1644301580, 821280956]
+build_end_time: [1644301675, 485213994]
+inputs:
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/BiometricAuth.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Constants/ColorNames.swift"
+  : [1644063268, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Constants/Constants.swift"
+  : [1644242763, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/DB Helper/DB+.swift"
+  : [1612039450, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/DB Helper/DBHelperViews.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/DB Helper/DBUtility.swift"
+  : [1612242860, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/AVSpeechSynthesisVoice+.swift"
+  : [1642348526, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/Array+.swift"
+  : [1644242318, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/Date+.swift"
+  : [1642348526, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/Int+ & Int64+.swift"
+  : [1642348526, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/Misc+Ext+Foundation.swift"
+  : [1633806215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/Set+ & NSSet+.swift"
+  : [1642348526, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Extension/String+.swift"
+  : [1642348526, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/AudioManager.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/DeviceTracker.swift"
+  : [1643453415, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/LocalNotification.swift"
+  : [1643610181, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/ODRManager.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/ShareAppContent.swift"
+  : [1643453045, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/SpotlightIndexing.swift"
+  : [1639723974, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/ViewModelProtocol.swift"
+  : [1615702013, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Foundation+Util/Util/Vision.swift"
+  : [1643378176, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/Protocols/Protocols.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Components/ControlSnippet.swift"
+  : [1643900086, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Components/HeaderFooterItems.swift"
+  : [1643437767, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Components/Rows.swift"
+  : [1642615863, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Components/SingleSelectionHandler.swift"
+  : [1612039450, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Components/ToolbarOptionsLayout.swift"
+  : [1642698483, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Extensions/Colors+.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Extensions/View.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Extensions/ViewModifiers.swift"
+  : [1643788915, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Helpers/HapticEngine.swift"
+  : [1642348526, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Helpers/UIKitInSwiftUI.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Helpers/Utensil.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/SwiftUIUtility.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/SwiftUI+Util/Util+SwiftUI.swift"
+  : [1612039450, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/Autolayout+Extension.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/CKAsset+Extension.swift"
+  : [1612039450, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/Collection+Extension.swift"
+  : [1612039450, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/Color+Extension.swift"
+  : [1642616228, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/Misc+Extension+UIKit.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/UILabel+Extension.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/UIStoryboard+.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/UIView+Extension.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Extension/UIViewController+Extension.swift"
+  : [1633806219, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Reusable Views/HorizontalCollectionView.swift"
+  : [1636618215, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Reusable Views/ReusableNavBar.swift"
+  : [1642618405, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Util/ColorPicker.swift"
+  : [1633806219, 432409048]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Util/ImageAccess.swift"
+  : [1642618421, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Util/MagnifyView.swift"
+  : [1633806219, 433917284]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Util/Misc+Util+UIKit.swift"
+  : [1633806219, 434617757]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Util/RecentPhotos.swift"
+  : [1622647316, 0]
+  ? "/Users/vaibhavkumar/Library/Mobile Documents/com~apple~CloudDocs/iWorkSpace/UtilityPackage/Sources/UtilityPackage/UIKit+Util/Util/UtilityUIKit.swift"
+  : [1643522332, 0]

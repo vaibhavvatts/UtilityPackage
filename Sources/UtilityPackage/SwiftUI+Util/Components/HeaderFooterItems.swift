@@ -28,3 +28,38 @@ public struct NavBarBtn: View {
         }
     }
 }
+
+public struct HeaderView<Content>: View where Content : View {
+    public init(title: String, leftSideContent: @escaping () -> Content, rightSideContent: @escaping () -> Content) {
+        self.title = title
+        self.leftSideContent = leftSideContent
+        self.rightSideContent = rightSideContent
+    }
+    private var title: String
+    private var leftSideContent: () -> Content
+    private var rightSideContent: () -> Content
+    
+    public var body: some View {
+        ZStack {
+            HStack {
+                self.leftSideContent()
+                    .buttonStyle(CustomButtonStyle())
+                Spacer()
+                self.rightSideContent()
+                    .buttonStyle(CustomButtonStyle())
+            }
+            HStack {
+                Spacer()
+                Text(self.title)
+                    .modifier(ModiTxtStyle(.titleRegular))
+                Spacer()
+            }
+        }
+#if targetEnvironment(macCatalyst)
+        .padding(.bottom)
+#else
+        .padding(.vertical)
+#endif
+        .padding(.horizontal, UtilConstants.Spacing.boxIntermittentPadding)
+    }
+}

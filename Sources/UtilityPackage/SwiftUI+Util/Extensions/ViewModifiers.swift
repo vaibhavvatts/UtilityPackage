@@ -75,7 +75,6 @@ public struct ModifierSnippetChildBackground: ViewModifier {
         content
             .font(.system(size: 17, weight: .semibold, design: .rounded))
             .padding(2*UtilConstants.Spacing.intrimPadding)
-            .foregroundColor(ColorNames.warningColor)
             .background(ViewColor.gray2.opacity(0.2))
             .cornerRadius(7)
             .shadow(color: ViewColor.viewWhite.opacity(0.2), radius: 1)
