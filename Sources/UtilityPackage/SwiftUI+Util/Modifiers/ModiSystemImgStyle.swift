@@ -25,6 +25,6 @@ public struct ModiNavImg1: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .font(.system(size: 18, weight: .medium, design: .rounded))
-            .foregroundColor(ThemeColors.activeThemeColor)
+            .foregroundColor(ViewColor.viewWhite)
     }
 }

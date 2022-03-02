@@ -155,6 +155,23 @@ open class UtilityUIKit {
         }, secondHandler: nil)
     }
     
+    public static func addPlainAlert(title: String = "", message: String = "", firstTitle: String = "", secondTitle: String = "", firstHandler:(()->Void)? = nil , secondHandler:(()->Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if !firstTitle.isEmpty, let firstHandler = firstHandler {
+            alertController.addAction(UIAlertAction(title: firstTitle, style: .default, handler: { (action) in
+                firstHandler()
+            }))
+        }
+        if !secondTitle.isEmpty, let secondHandler = secondHandler {
+            alertController.addAction(UIAlertAction(title: secondTitle, style: .default, handler: { (action) in
+                secondHandler()
+            }))
+        }
+        DispatchQueue.main.async {
+            UtilityUIKit.topViewController?.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     public static func openSettings(title: String, message: String) {
         DispatchQueue.main.async {
             let alertController = UIAlertController (title: title, message: message, preferredStyle: .alert)
