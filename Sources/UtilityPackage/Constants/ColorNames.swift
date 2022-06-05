@@ -53,6 +53,7 @@ public struct ThemeColors {
 public struct ViewColor {
     public static let viewBlack = Color("viewBlack")
     public static let viewWhite = Color("viewWhite")
+    public static let viewWhiteDim = Color("viewWhiteDim")
     public static let gray1 = Color("gray1")
     public static let gray2 = Color("gray2")
     public static let dimFootnote = Color("dimFootnote")

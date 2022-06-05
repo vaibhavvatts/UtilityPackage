@@ -1,3 +1,4 @@
+
 //
 //  LocalNotification.swift
 //  JotDown
@@ -10,8 +11,30 @@ import Foundation
 import UserNotifications
 import UIKit
 
+public enum EnumNotificationAction: String {
+    case snooze, delete
+    
+    static func getActions(for types: [EnumNotificationAction]) -> [UNNotificationAction] {
+        var actions = [UNNotificationAction]()
+        
+        for type in types {
+            switch type {
+            case .snooze:
+                actions.append(UNNotificationAction(identifier: type.rawValue, title: "Snooze", options: []))
+            case .delete:
+                actions.append(UNNotificationAction(identifier: type.rawValue, title: "Delete", options: [.destructive]))
+            }
+        }
+        
+        return actions
+    }
+}
+
+public typealias NotificationUserInfo = Dictionary<AnyHashable, Any>
+
 public struct PayloadLocalNotification {
-    public init(id: String, title: String, subTitle: String, body: String, time: TimeInterval? = nil, dateTime: Date? = nil, sound: String = "Default.mp3", recurringTime: Float = 60.0) {
+    
+    public init(id: String, title: String, subTitle: String, body: String, time: TimeInterval? = nil, dateTime: Date? = nil, sound: String = "Default.mp3", recurringTime: Float = 60.0, notificationActions: [EnumNotificationAction]? = nil, userInfo: NotificationUserInfo? = nil) {
         self.id = id
         self.title = title
         self.subTitle = subTitle
@@ -20,6 +43,8 @@ public struct PayloadLocalNotification {
         self.dateTime = dateTime
         self.sound = sound
         self.recurringTime = recurringTime
+        self.notificationActions = notificationActions
+        self.userInfo = userInfo
     }
     
     public var id: String
@@ -30,6 +55,8 @@ public struct PayloadLocalNotification {
     public var dateTime: Date?
     public var sound: String
     public var recurringTime: Float = 60.0
+    public var notificationActions: [EnumNotificationAction]?
+    public var userInfo: NotificationUserInfo?
 }
 
 public class LocalNotifications {
@@ -88,7 +115,15 @@ public class LocalNotifications {
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound))
         content.body = payload.body
         
-//        content.attachments = createImageAttachment(image: UIImage(named: "tmp"))
+        if let userInfo = payload.userInfo {
+            content.userInfo = userInfo
+        }
+        
+        if let actions = payload.notificationActions, !actions.isEmpty {
+            content.categoryIdentifier = payload.id
+        }
+        
+        //        content.attachments = createImageAttachment(image: UIImage(named: "tmp"))
         
         if let date = payload.dateTime {
             print(date)
@@ -102,6 +137,18 @@ public class LocalNotifications {
             let request = UNNotificationRequest(identifier: payload.id, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request)
         }
+        
+        if let actions = payload.notificationActions, !actions.isEmpty {
+            registerCustomActions(actions: actions, identifier: payload.id)
+        }
+    }
+    
+    private static func registerCustomActions(actions: [EnumNotificationAction], identifier: String) {
+        //      let snooze = UNNotificationAction(identifier: ActionIdentifier.snooze.rawValue, title: "Snooze", icon: UNNotificationActionIcon(systemImageName: "moon.zzz"))
+        let userActions = identifier
+        let category = UNNotificationCategory(identifier: userActions, actions: EnumNotificationAction.getActions(for: actions), intentIdentifiers: [], options: [])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
     }
     
     public static func removePendingNotification(payload: PayloadLocalNotification) {
@@ -125,20 +172,52 @@ extension UIImage {
             return nil
         }
         let url = cacheDirectory.appendingPathComponent("\(imageName).png")
-
+        
         guard fileManager.fileExists(atPath: url.path) else {
             guard let data = self.pngData() else { return nil }
             fileManager.createFile(atPath: url.path, contents: data, attributes: nil)
             return url
         }
-
+        
         return url
     }
 }
 
 func createImageAttachment(image: UIImage?, imgName: String) -> UNNotificationAttachment? {
-        if let image = image,
-            let imageUrl = image.createLocalURL(imageName: imgName),
-           let attachment = try? UNNotificationAttachment(identifier: imgName, url: imageUrl, options: nil) { attachment }
-        return nil
+    if let image = image,
+       let imageUrl = image.createLocalURL(imageName: imgName),
+       let attachment = try? UNNotificationAttachment(identifier: imgName, url: imageUrl, options: nil) { attachment }
+    return nil
+}
+
+extension UNNotification {
+    public func snoozeNotification(for seconds: Int) {
+        let content = UNMutableNotificationContent()
+        
+        content.title = self.request.content.title
+        content.subtitle = self.request.content.subtitle
+        content.body = self.request.content.body
+        content.sound = self.request.content.sound
+        
+        let identifier = self.request.identifier
+//        guard let oldTrigger = self.request.trigger as? UNCalendarNotificationTrigger else {
+//            debugPrint("Cannot reschedule notification without calendar trigger.")
+//            return
+//        }
+
+//        var components = oldTrigger.dateComponents
+        var components = Calendar.current.dateComponents([.second], from: Date())
+        components.second = (components.second ?? 0) + seconds
+
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                debugPrint("Rescheduling failed", error.localizedDescription)
+            } else {
+                debugPrint("rescheduled success")
+            }
+        }
     }
+
+}

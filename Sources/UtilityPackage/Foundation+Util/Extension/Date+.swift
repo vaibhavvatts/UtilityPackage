@@ -121,7 +121,7 @@ public extension Date {
     }
     /// Returns the amount of weeks from another date
     func weeks(from date: Date) -> Int {
-        return Calendar.current.dateComponents([.weekOfMonth], from: date, to: self).weekOfMonth ?? 0
+        return Calendar.current.dateComponents([.weekOfMonth], from: date, to: self).weekOfMonth ?? 0 
     }
     /// Returns the amount of days from another date
     func days(from date: Date) -> Int {
