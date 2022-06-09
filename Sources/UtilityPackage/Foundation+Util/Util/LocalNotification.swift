@@ -191,7 +191,7 @@ func createImageAttachment(image: UIImage?, imgName: String) -> UNNotificationAt
 }
 
 extension UNNotification {
-    public func snoozeNotification(for seconds: Int) {
+    public func snoozeNotification(for minutes: Int) {
         let content = UNMutableNotificationContent()
         
         content.title = self.request.content.title
@@ -206,9 +206,9 @@ extension UNNotification {
 //        }
 
 //        var components = oldTrigger.dateComponents
-        var components = Calendar.current.dateComponents([.second], from: Date())
-        components.second = (components.second ?? 0) + seconds
-
+        var components = Calendar.current.dateComponents([.minute], from: Date())
+        components.minute = (components.minute ?? 0) + minutes
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
