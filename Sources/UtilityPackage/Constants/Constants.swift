@@ -195,3 +195,9 @@ public enum UtilConstants {
         public static let snippetPadding: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 14 : 16
     }
 }
+
+extension UtilConstants {
+    enum Keys {
+        static let activationId = "activationId"
+    }
+}
