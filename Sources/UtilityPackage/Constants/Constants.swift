@@ -196,8 +196,8 @@ public enum UtilConstants {
     }
 }
 
-extension UtilConstants {
-    enum Keys {
-        static let activationId = "activationId"
+public extension UtilConstants {
+    public enum Keys {
+        public static let activationId = "activationId"
     }
 }
