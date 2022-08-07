@@ -21,7 +21,7 @@ final class ArrayTestCase: XCTestCase {
     func test_Enumerate() {
         arrToBeEnumerated?.enumerate({ (value, index, condition) in
             if let requiredValue = value as? Double{
-                print(index)
+//                print(index)
                 XCTAssertNotNil(condition = requiredValue == 0.20057 ?  true : false)
             }
           XCTAssertNotNil(value)
@@ -31,7 +31,7 @@ final class ArrayTestCase: XCTestCase {
     func test_RevereseEnumerate(){
         arrToBeEnumerated?.reverseEnumerate { (value, index, condition) in
             if let requiredValue = value as? Double{
-                print(index)
+//                print(index)
                 XCTAssertNotNil(condition = requiredValue == 0.20057 ?  true : false)
             }
             XCTAssertNotNil(value)

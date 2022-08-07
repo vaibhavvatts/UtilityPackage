@@ -77,7 +77,7 @@ public class LocalNotifications {
                         
                         if UIApplication.shared.canOpenURL(settingsUrl) {
                             UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                                print("Settings opened: \(success)") // Prints true
+//                                print("Settings opened: \(success)") // Prints true
                             })
                         }
                     }))
@@ -213,9 +213,9 @@ extension UNNotification {
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
-                debugPrint("Rescheduling failed", error.localizedDescription)
+//                debugPrint("Rescheduling failed", error.localizedDescription)
             } else {
-                debugPrint("rescheduled success")
+//                debugPrint("rescheduled success")
             }
         }
     }

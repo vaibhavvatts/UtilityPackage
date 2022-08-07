@@ -17,7 +17,7 @@ open class SwiftUIUtility {
         }
         if UIApplication.shared.canOpenURL(settingsUrl) {
             UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                print("Settings opened: \(success)")
+//                print("Settings opened: \(success)")
             })
         }
     }

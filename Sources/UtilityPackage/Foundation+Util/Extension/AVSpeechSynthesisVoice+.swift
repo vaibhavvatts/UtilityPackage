@@ -21,8 +21,8 @@ public extension AVSpeechSynthesisVoice {
     }
     
     static var printAllVoices: Void {
-        AVSpeechSynthesisVoice.speechVoices().forEach {
-            print($0)
+        AVSpeechSynthesisVoice.speechVoices().forEach {_ in 
+//            print($0)
         }
     }
     

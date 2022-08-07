@@ -37,7 +37,7 @@ public class ODRManager: NSObject {
                 request.beginAccessingResources { (error) in
                     DispatchQueue.main.async {
                         if let err = error {
-                            print(err.localizedDescription)
+//                            print(err.localizedDescription)
                             completion(err)
                         } else {
                             request.progress.removeObserver(self, forKeyPath: "fractionCompleted")

@@ -144,9 +144,11 @@ open class UtilityUIKit {
     }
     
     public static func somethingWentWrongAlert(message: String) {
-        addAlertController(messageString: message, title: UtilConstants.somethingWentWrong, firstTitle: UtilConstants.okay, secondTitle: "", tintColor: nil, firstHandler: {
-            
-        }, secondHandler: nil)
+        DispatchQueue.main.async {
+            addAlertController(messageString: message, title: UtilConstants.somethingWentWrong, firstTitle: UtilConstants.okay, secondTitle: "", tintColor: nil, firstHandler: {
+                
+            }, secondHandler: nil)
+        }
     }
     
     public static func defaultAlert(message: String) {

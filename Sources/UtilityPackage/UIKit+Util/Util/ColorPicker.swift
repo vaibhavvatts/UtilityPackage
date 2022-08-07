@@ -29,6 +29,7 @@ class VVColorPicker : UIView {
     }
 
     private func initialize() {
+        
         self.clipsToBounds = true
     }
 
