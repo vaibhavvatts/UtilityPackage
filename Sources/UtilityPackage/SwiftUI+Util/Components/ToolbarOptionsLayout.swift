@@ -24,11 +24,11 @@ public struct ToolbarOptionsLayout: View {
         HStack(alignment: .firstTextBaseline) {
             if !iconName.isEmpty {
                 Image(systemName: iconName)
-                    .font(.system(size: 12, weight: .regular, design: .rounded))
+                    .font(.system(size: 11, weight: .regular, design: .rounded))
             }
             if !text.isEmpty {
                 Text(text)
-                    .font(.system(size: 14, weight: .medium, design: .rounded))
+                    .font(.system(size: 13, weight: .regular, design: .rounded))
                     .padding(.leading, iconName.isEmpty ? 0 : -6)
             }
         }
