@@ -89,7 +89,7 @@ public class LocalNotifications {
     }
     
     public static func scheduleRecurringNotification(payload: PayloadLocalNotification) {
-        requestAuthorization()
+//        requestAuthorization()
         
         let content = UNMutableNotificationContent()
         content.title = payload.title
@@ -107,7 +107,7 @@ public class LocalNotifications {
     }
     
     public static func scheduleNotification(payload: PayloadLocalNotification) {
-        requestAuthorization()
+//        requestAuthorization()
         
         let content = UNMutableNotificationContent()
         content.title = payload.title
