@@ -33,11 +33,11 @@ open class BiometricIDAuth {
         }
     }
     
-    public func authenticateUserByPassword(completion: @escaping (String?) -> Void) {
+    public func authenticateUserByPassword(completion: @escaping (String?, Error?) -> Void) {
         self.context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: self.loginReason) { (success, evaluateError) in
             if success {
                 DispatchQueue.main.async {
-                    completion(nil)
+                    completion(nil, nil)
                 }
             }else {
                 
@@ -60,7 +60,7 @@ open class BiometricIDAuth {
                     message = "Face ID/Touch ID may not be configured. You may need to go to settings to enabled it."
                 }
                 
-                completion(message)
+                completion(message, evaluateError)
             }
         }
     }

@@ -115,6 +115,7 @@ public class LocalNotifications {
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound))
         content.body = payload.body
         
+        
         if let userInfo = payload.userInfo {
             content.userInfo = userInfo
         }
