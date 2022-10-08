@@ -65,10 +65,10 @@ open class BiometricIDAuth {
         }
     }
     
-    public func authenticateUser(completion: @escaping (String?) -> Void) {
+    public func authenticateUser(completion: @escaping (String?, Error?) -> Void) {
         
         guard canEvaluatePolicy else {
-            completion("Face ID or Touch ID not available. You may need to go to settings to enabled it.")
+            completion("Face ID or Touch ID not available. You may need to go to settings to enabled it.", nil)
             return
         }
         
@@ -76,7 +76,7 @@ open class BiometricIDAuth {
                                localizedReason: loginReason) { (success, evaluateError) in
             if success {
                 DispatchQueue.main.async {
-                    completion(nil)
+                    completion(nil, nil)
                 }
             } else {
                 
@@ -99,7 +99,7 @@ open class BiometricIDAuth {
                     message = "Face ID/Touch ID may not be configured. You may need to go to settings to enabled it."
                 }
                 
-                completion(message)
+                completion(message, evaluateError)
             }
         }
     }
