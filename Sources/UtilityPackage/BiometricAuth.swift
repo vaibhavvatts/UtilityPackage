@@ -47,7 +47,7 @@ open class BiometricIDAuth {
                 case LAError.authenticationFailed?:
                     message = "There was a problem verifying your identity."
                 case LAError.userCancel?:
-                    message = "You pressed cancel."
+                    message = " " // user pressed cancel
                 case LAError.userFallback?:
                     message = "Biometric didn't work."
                 case LAError.biometryNotAvailable?:
@@ -55,9 +55,9 @@ open class BiometricIDAuth {
                 case LAError.biometryNotEnrolled?:
                     message = "Face ID/Touch ID is not set up. You may need to go to settings to enabled it."
                 case LAError.biometryLockout?:
-                    message = "Face ID/Touch ID is locked. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
                 default:
-                    message = "Face ID/Touch ID may not be configured. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
                 }
                 
                 completion(message, evaluateError)
@@ -68,7 +68,7 @@ open class BiometricIDAuth {
     public func authenticateUser(completion: @escaping (String?, Error?) -> Void) {
         
         guard canEvaluatePolicy else {
-            completion("Face ID or Touch ID not available. You may need to go to settings to enabled it.", nil)
+            completion("Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes.", nil)
             return
         }
         
@@ -86,17 +86,17 @@ open class BiometricIDAuth {
                 case LAError.authenticationFailed?:
                     message = "There was a problem verifying your identity."
                 case LAError.userCancel?:
-                    message = "You pressed cancel."
+                    message = " " // user pressed cancel
                 case LAError.userFallback?:
                     message = "Biometric didn't work."
                 case LAError.biometryNotAvailable?:
-                    message = "Face ID/Touch ID is not available. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
                 case LAError.biometryNotEnrolled?:
                     message = "Face ID/Touch ID is not set up. You may need to go to settings to enabled it."
                 case LAError.biometryLockout?:
-                    message = "Face ID/Touch ID is locked. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
                 default:
-                    message = "Face ID/Touch ID may not be configured. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
                 }
                 
                 completion(message, evaluateError)
