@@ -51,13 +51,13 @@ open class BiometricIDAuth {
                 case LAError.userFallback?:
                     message = "Biometric didn't work."
                 case LAError.biometryNotAvailable?:
-                    message = "Face ID/Touch ID is not available. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 case LAError.biometryNotEnrolled?:
-                    message = "Face ID/Touch ID is not set up. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 case LAError.biometryLockout?:
-                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 default:
-                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 }
                 
                 completion(message, evaluateError)
@@ -68,7 +68,7 @@ open class BiometricIDAuth {
     public func authenticateUser(completion: @escaping (String?, Error?) -> Void) {
         
         guard canEvaluatePolicy else {
-            completion("Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes.", nil)
+            completion("Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes.", nil)
             return
         }
         
@@ -90,13 +90,13 @@ open class BiometricIDAuth {
                 case LAError.userFallback?:
                     message = "Biometric didn't work."
                 case LAError.biometryNotAvailable?:
-                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 case LAError.biometryNotEnrolled?:
-                    message = "Face ID/Touch ID is not set up. You may need to go to settings to enabled it."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 case LAError.biometryLockout?:
-                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 default:
-                    message = "Face ID/ Touch ID could not be accessed. Enable it from settings to access your secret notes."
+                    message = "Face ID/ Touch ID could not be accessed. Enable it and set-up passcode from settings to access your secret notes."
                 }
                 
                 completion(message, evaluateError)
