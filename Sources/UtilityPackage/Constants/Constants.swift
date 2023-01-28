@@ -178,6 +178,7 @@ public enum UtilConstants {
     public static let whatIsThis = "What is this ?"
     public static let startDateSmallerThanEndDate = "Start date must be smaller than End date"
     public static let lastDayOfMonth = "Last Day of Month"
+    public static let share = "Share"
     
     
     public enum Spacing {
