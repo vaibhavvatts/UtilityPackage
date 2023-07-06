@@ -34,13 +34,14 @@ public typealias NotificationUserInfo = Dictionary<AnyHashable, Any>
 
 public struct PayloadLocalNotification {
     
-    public init(id: String, title: String, subTitle: String, body: String, time: TimeInterval? = nil, dateTime: Date? = nil, sound: String = "Default.mp3", recurringTime: Float = 60.0, notificationActions: [EnumNotificationAction]? = nil, userInfo: NotificationUserInfo? = nil) {
+    public init(id: String, title: String, subTitle: String, body: String, time: TimeInterval? = nil, dateTime: Date? = nil, badgeCount: Int = 0, sound: String = "Default.mp3", recurringTime: Float = 60.0, notificationActions: [EnumNotificationAction]? = nil, userInfo: NotificationUserInfo? = nil) {
         self.id = id
         self.title = title
         self.subTitle = subTitle
         self.body = body
         self.time = time
         self.dateTime = dateTime
+        self.badgeCount = badgeCount
         self.sound = sound
         self.recurringTime = recurringTime
         self.notificationActions = notificationActions
@@ -53,6 +54,7 @@ public struct PayloadLocalNotification {
     public var body: String
     public var time: TimeInterval?
     public var dateTime: Date?
+    public var badgeCount: Int
     public var sound: String
     public var recurringTime: Float = 60.0
     public var notificationActions: [EnumNotificationAction]?
@@ -94,6 +96,7 @@ public class LocalNotifications {
         let content = UNMutableNotificationContent()
         content.title = payload.title
         content.subtitle = payload.subTitle
+        content.badge = NSNumber(value: payload.badgeCount)
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound ))
         content.body = payload.body
         
@@ -112,6 +115,7 @@ public class LocalNotifications {
         let content = UNMutableNotificationContent()
         content.title = payload.title
         content.subtitle = payload.subTitle
+        content.badge = NSNumber(value: payload.badgeCount)
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: payload.sound))
         content.body = payload.body
         
